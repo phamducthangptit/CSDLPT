@@ -1,0 +1,211 @@
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.AssemblyReference.cache
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.SuggestedBindingRedirects.cache
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmMain.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Properties.Resources.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.GenerateResource.cache
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.exe.licenses
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.CoreCompileInputs.cache
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\THITRACNGHIEM.exe.config
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\THITRACNGHIEM.exe
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\THITRACNGHIEM.pdb
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.BonusSkins.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Data.Desktop.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Data.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Drawing.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Printing.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Sparkline.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Utils.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraBars.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraEditors.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Pdf.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Pdf.v22.2.Drawing.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Data.Desktop.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Data.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Utils.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Sparkline.v22.2.Core.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraBars.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraEditors.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Printing.v22.2.Core.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Pdf.v22.2.Core.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Pdf.v22.2.Drawing.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.CopyComplete
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.exe
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.pdb
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmDangNhap.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmTaoTaiKhoan.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmGiangVien.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraGrid.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraLayout.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraPrinting.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.RichEdit.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraTreeList.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Office.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraGrid.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraLayout.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraPrinting.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.RichEdit.v22.2.Core.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraTreeList.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Office.v22.2.Core.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmMonHoc.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmKhoa.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmLop.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmSinhVien.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmBoDe.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Test.resources
+=======
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Charts.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.CodeParser.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.DataAccess.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.PivotGrid.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.RichEdit.v22.2.Export.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Utils.v22.2.UI.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Xpo.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraGauges.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraReports.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraReports.v22.2.Extensions.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraRichEdit.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraVerticalGrid.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.DataVisualization.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.DataAccess.v22.2.UI.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraNavBar.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.Wizard.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraPivotGrid.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.Extensions.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Images.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraDiagram.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Diagram.v22.2.Core.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Charts.v22.2.Core.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.DataAccess.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.PivotGrid.v22.2.Core.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Utils.v22.2.UI.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Xpo.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraGauges.v22.2.Core.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraReports.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraReports.v22.2.Extensions.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraRichEdit.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraVerticalGrid.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.DataAccess.v22.2.UI.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraNavBar.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.Wizard.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraPivotGrid.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.XtraDiagram.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Diagram.v22.2.Core.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Xrpt_CauHoiTheoGV.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\TaoFormThiTNTest.frmThiSinhVien.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmChuanBiThiSV.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmChuanBiThiGV.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\TaoFormThiTNTest.frmThiGV.resources
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.ExpressApp.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Persistent.Base.v22.2.dll
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.ExpressApp.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\bin\Debug\DevExpress.Persistent.Base.v22.2.xml
+E:\Dev\C#\THITRACNGHIEM\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Xrpt_BaiThi.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\THITRACNGHIEM.exe.config
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\THITRACNGHIEM.exe
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\THITRACNGHIEM.pdb
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.BonusSkins.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Charts.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.CodeParser.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Data.Desktop.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Data.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.DataAccess.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Drawing.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.ExpressApp.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Office.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Pdf.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Persistent.Base.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.PivotGrid.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Printing.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.RichEdit.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.RichEdit.v22.2.Export.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Sparkline.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Utils.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Utils.v22.2.UI.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Xpo.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraBars.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraEditors.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraGauges.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraGrid.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraLayout.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraPrinting.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraReports.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraReports.v22.2.Extensions.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Images.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraTreeList.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraRichEdit.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraVerticalGrid.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.DataVisualization.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Pdf.v22.2.Drawing.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.DataAccess.v22.2.UI.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraNavBar.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.Wizard.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraPivotGrid.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.Extensions.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraDiagram.v22.2.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Diagram.v22.2.Core.dll
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Charts.v22.2.Core.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Data.Desktop.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Data.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.DataAccess.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Office.v22.2.Core.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Pdf.v22.2.Core.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.ExpressApp.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Persistent.Base.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.PivotGrid.v22.2.Core.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.RichEdit.v22.2.Core.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Utils.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Sparkline.v22.2.Core.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Utils.v22.2.UI.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Xpo.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraBars.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraEditors.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Printing.v22.2.Core.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraGauges.v22.2.Core.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraGrid.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraLayout.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraPrinting.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraReports.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraReports.v22.2.Extensions.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraTreeList.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraRichEdit.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraVerticalGrid.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Pdf.v22.2.Drawing.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.DataAccess.v22.2.UI.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraNavBar.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraCharts.v22.2.Wizard.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraPivotGrid.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.XtraDiagram.v22.2.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\bin\Debug\DevExpress.Diagram.v22.2.Core.xml
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmBoDe.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmChuanBiThiGV.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmChuanBiThiSV.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmDangNhap.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmGiangVien.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmGVDK.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmKhoa.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmLop.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmMain.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmMonHoc.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmSinhVien.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Frpt_BANG_DIEM_MH.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Frpt_THONG_KE_DK_THI1.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\TaoFormThiTNTest.frmThiGV.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\TaoFormThiTNTest.frmThiSinhVien.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Properties.Resources.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.frmTaoTK.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Xrpt_BaiThi.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Xrpt_CauHoiTheoGV.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Xrpt_BANG_DIEM_MH.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.Xrpt_THONG_KE_DK_THI1.resources
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.exe.licenses
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.csproj.CopyComplete
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.exe
+C:\Users\Admin\Documents\nam3ki2\csdl-pt\source\New folder\CSDLPT\THITRACNGHIEM\obj\Debug\THITRACNGHIEM.pdb
