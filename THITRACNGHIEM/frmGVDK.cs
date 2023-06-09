@@ -153,13 +153,7 @@ namespace THITRACNGHIEM
                 cmbGV.DataSource = dt2;
                 cmbGV.DisplayMember = "TENGV";
                 cmbGV.ValueMember = "MAGV";
-<<<<<<< HEAD
-                if (bdsGVDK.Position != -1) {
-                    cmbGV.SelectedValue = ((DataRowView)bdsGVDK[0])["MAGV"].ToString();
-                    cmbMH.SelectedValue = ((DataRowView)bdsGVDK[0])["MAMH"].ToString();
-                }
-                else {
-=======
+
                 if (bdsGVDK.Position != -1)
                 {
                     cmbGV.SelectedValue = ((DataRowView)bdsGVDK[0])["MAGV"].ToString();
@@ -167,13 +161,12 @@ namespace THITRACNGHIEM
                 }
                 else
                 {
->>>>>>> adfec87adf745761bbc1d034eac389b9ea62acaa
                     cmbGV.SelectedValue = "MATRONG";
                     cmbMH.SelectedValue = "MATRONG";
                 }
                 cmbTrinhDo.SelectedItem = "A";
                 cmbLan.SelectedItem = "1";
-                //cmbGV.SelectedValue = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAGV"].ToString();
+                
             }
         }
 
@@ -314,17 +307,14 @@ namespace THITRACNGHIEM
                 cmbLan.Focus();
                 return;
             }
-<<<<<<< HEAD
 
-=======
->>>>>>> adfec87adf745761bbc1d034eac389b9ea62acaa
             if (int.Parse(lan) < 1 || int.Parse(lan) > 2)
             {
                 MessageBox.Show("Lần thi phải lớn hơn hoặc bằng 1 và nhỏ hơn hoặc bằng 2", "", MessageBoxButtons.OK);
                 cmbLan.Focus();
                 return;
             }
-<<<<<<< HEAD
+
             if (int.Parse(lan) == 2)
             {
                 string strLenh1 = "EXEC SP_CHECKEXISTGVDK '" + maMH + "', '"
@@ -347,8 +337,6 @@ namespace THITRACNGHIEM
                     return;
                 }
             }
-=======
->>>>>>> adfec87adf745761bbc1d034eac389b9ea62acaa
             if (soCauThi == "")
             {
                 MessageBox.Show("Số câu thi không được thiếu", "", MessageBoxButtons.OK);
@@ -382,7 +370,7 @@ namespace THITRACNGHIEM
                 txtThoiGian.Focus();
                 return;
             }
-<<<<<<< HEAD
+
             if (suKien.Equals("HC"))
             {
                string maMH1 = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAMH"].ToString().Trim();
@@ -400,12 +388,8 @@ namespace THITRACNGHIEM
                     return;
                 }
             }
-=======
 
-            //maLop = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MALOP"].ToString();
-            if (suKien.Equals("THEM") || (suKien.Equals("HC")))
-            {
->>>>>>> adfec87adf745761bbc1d034eac389b9ea62acaa
+
                 string strLenh = "EXEC SP_CHECKEXISTGVDK '" + maMH + "', '"
                                 + maLop + "', '" +
                                  lan + "'";
@@ -415,82 +399,41 @@ namespace THITRACNGHIEM
                 int check = Int32.Parse(dataReaderGVDK.GetString(0)); // check xem trong db đã có mã gv này hay chưa
                 dataReaderGVDK.Close();
                 Program.conn.Close();
-                if (check == 0)
+            if (check == 0)
+            {
+
+                if (suKien.Equals("THEM"))
                 {
-<<<<<<< HEAD
-                     if(suKien.Equals("THEM"))
-                       {
-                        
-=======
-                    if (suKien.Equals("THEM"))
+                    string strLenh1 = "SP_GIANGVIEN_DANGKI_THI '"
+                        + maLop + "', '"
+                        + maMH + "', '"
+                         + maGV + "', '"
+                         + trinhDo + "', '"
+                         + chuyenDangNgay(ngayThi) + "', '"
+                        + lan + "', '"
+                        + soCauThi + "', '"
+                        + thoiGian + "', '"
+                        + "0'"
+                        ;
+                    int result = Program.ExecSqlNonQuery(strLenh1, Program.connstr);
+                    if (result == 0)
                     {
-
->>>>>>> adfec87adf745761bbc1d034eac389b9ea62acaa
-                        //MessageBox.Show(chuyenDangNgay(ngayThi), "", MessageBoxButtons.OK);
-                        string strLenh1 = "SP_GIANGVIEN_DANGKI_THI '"
-                            + maLop + "', '"
-                            + maMH + "', '"
-                             + maGV + "', '"
-                             + trinhDo + "', '"
-                             + chuyenDangNgay(ngayThi) + "', '"
-                            + lan + "', '"
-                            + soCauThi + "', '"
-                            + thoiGian + "', '"
-                            + "0'"
-                            ;
-                        int result = Program.ExecSqlNonQuery(strLenh1, Program.connstr);
-                        if (result == 0)
-                        {
-<<<<<<< HEAD
-                            MessageBox.Show("Lưu thành công","", MessageBoxButtons.OK);
-=======
-                            MessageBox.Show("Lưu thành công", "", MessageBoxButtons.OK);
->>>>>>> adfec87adf745761bbc1d034eac389b9ea62acaa
-                        }
-                        this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                        this.LOPTableAdapter.Fill(this.dSGVDK.LOP);
-                        bdsLop.Position = viTriLop;
-
-                        this.dSGVDK.GIAOVIEN_DANGKY.Clear();
-
-                        this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
-                        this.GIAOVIEN_DANGKYTableAdapter.Fill(this.dSGVDK.GIAOVIEN_DANGKY);
-
-<<<<<<< HEAD
-                    } else if (suKien.Equals("HC"))
-                    {
-                        string strLenh1 = "SP_GIANGVIEN_DANGKI_THI '"
-                               + maLop + "', '"
-                               + maMH + "', '"
-                                + maGV + "', '"
-                                + trinhDo + "', '"
-                                + chuyenDangNgay(ngayThi) + "', '"
-                               + lan + "', '"
-                               + soCauThi + "', '"
-                               + thoiGian + "', '"
-                               + "1'"
-                               ;
-                            int result = Program.ExecSqlNonQuery(strLenh1, Program.connstr);
-                            if (result == 0)
-                            {
-                                MessageBox.Show("Lưu thành công", "", MessageBoxButtons.OK);
-                            }
-                            this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                            this.LOPTableAdapter.Fill(this.dSGVDK.LOP);
-                            bdsLop.Position = viTriLop;
-=======
+                        MessageBox.Show("Lưu thành công", "", MessageBoxButtons.OK);
                     }
-                    else
-                    {
-                        MessageBox.Show("Lớp học này đã được đăng kí thi rồi.\n", "", MessageBoxButtons.OK);
-                        return;
-                    }
+                    this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.LOPTableAdapter.Fill(this.dSGVDK.LOP);
+                    bdsLop.Position = viTriLop;
+
+                    this.dSGVDK.GIAOVIEN_DANGKY.Clear();
+
+                    this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.GIAOVIEN_DANGKYTableAdapter.Fill(this.dSGVDK.GIAOVIEN_DANGKY);
+
+
                 }
-                else
+                else if (suKien.Equals("HC"))
                 {
-                    if (suKien.Equals("HC"))
-                    {
-                        string strLenh1 = "SP_GIANGVIEN_DANGKI_THI '"
+                    string strLenh1 = "SP_GIANGVIEN_DANGKI_THI '"
                            + maLop + "', '"
                            + maMH + "', '"
                             + maGV + "', '"
@@ -501,41 +444,27 @@ namespace THITRACNGHIEM
                            + thoiGian + "', '"
                            + "1'"
                            ;
-                        int result = Program.ExecSqlNonQuery(strLenh1, Program.connstr);
-                        if (result == 0)
-                        {
-                            MessageBox.Show("Lưu thành công", "", MessageBoxButtons.OK);
-                        }
-                        this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                        this.LOPTableAdapter.Fill(this.dSGVDK.LOP);
-                        bdsLop.Position = viTriLop;
->>>>>>> adfec87adf745761bbc1d034eac389b9ea62acaa
-
-                            this.dSGVDK.GIAOVIEN_DANGKY.Clear();
-
-                            this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
-                            this.GIAOVIEN_DANGKYTableAdapter.Fill(this.dSGVDK.GIAOVIEN_DANGKY);
-                            bdsGVDK.Position = viTri;
-                    }
-                }   else 
+                    int result = Program.ExecSqlNonQuery(strLenh1, Program.connstr);
+                    if (result == 0)
                     {
-                        MessageBox.Show("Đã tồn tại đăng kí thi lần "+ lan 
-                            +" của lớp "
-                            + ((DataRowView)bdsLop[bdsLop.Position])["TENLOP"].ToString().Trim()
-                            +" ứng với môn học "
-                            + ((DataRowView)cmbMH.SelectedItem)["TENMH"].ToString().Trim(),
-                            "", MessageBoxButtons.OK);
-                        return;
+                        MessageBox.Show("Lưu thành công", "", MessageBoxButtons.OK);
                     }
-<<<<<<< HEAD
-                    
-               
-=======
-
+                    this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.LOPTableAdapter.Fill(this.dSGVDK.LOP);
+                    bdsLop.Position = viTriLop;
                 }
-
             }
->>>>>>> adfec87adf745761bbc1d034eac389b9ea62acaa
+            else
+            {
+                MessageBox.Show("Đã tồn tại đăng kí thi lần " + lan
+                    + " của lớp "
+                    + ((DataRowView)bdsLop[bdsLop.Position])["TENLOP"].ToString().Trim()
+                    + " ứng với môn học "
+                    + ((DataRowView)cmbMH.SelectedItem)["TENMH"].ToString().Trim(),
+                    "", MessageBoxButtons.OK);
+                return;
+            }
+            
             panelControl2.Enabled = false;
             gcGVDK.Enabled = true;
             gcLop.Enabled = true;
