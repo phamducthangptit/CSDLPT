@@ -145,7 +145,7 @@ namespace THITRACNGHIEM
             txtMaLop.Text = maLop;
 
             groupBox1.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = true;
-
+            this.txtMaSV.Enabled = true;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled =
                 btnReload.Enabled = btnThoat.Enabled = false;
 
@@ -250,7 +250,9 @@ namespace THITRACNGHIEM
                 SqlDataReader dataReaderSV = Program.ExecSqlDataReader(strLenh);
                 dataReaderSV.Read();
                 int check = Int32.Parse(dataReaderSV.GetString(0));
-                if(check == 0)
+                dataReaderSV.Close();
+                Program.conn.Close();
+                if (check == 0)
                 {
                     try
                     {
@@ -268,8 +270,7 @@ namespace THITRACNGHIEM
                 {
                     MessageBox.Show("Mã sinh viên đã tồn tại trong hệ thống", "", MessageBoxButtons.OK);
                 }
-                dataReaderSV.Close();
-                Program.conn.Close();
+                
             } else if (suKien.Equals("HC"))
             {
                 try
@@ -293,6 +294,20 @@ namespace THITRACNGHIEM
                 = btnThoat.Enabled = true;
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
             groupBox1.Enabled = false;
+        }
+
+        private void gridView2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (bdsSinhVien.Count == 0)
+            {
+                btnXoa.Enabled = false;
+                btnHieuChinh.Enabled = false;
+            }
+            else
+            {
+                btnXoa.Enabled = true;
+                btnHieuChinh.Enabled = true;
+            }
         }
     }
 }

@@ -349,6 +349,7 @@
             this.colTENKH});
             this.gridView1.GridControl = this.gcKhoa;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colMAKH
             // 
@@ -397,6 +398,7 @@
             // 
             this.txtTenKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKHOA, "TENKH", true));
             this.txtTenKhoa.Location = new System.Drawing.Point(591, 53);
+            this.txtTenKhoa.MaxLength = 50;
             this.txtTenKhoa.Name = "txtTenKhoa";
             this.txtTenKhoa.Size = new System.Drawing.Size(268, 28);
             this.txtTenKhoa.TabIndex = 3;
@@ -405,6 +407,7 @@
             // 
             this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsKHOA, "MAKH", true));
             this.txtMaKhoa.Location = new System.Drawing.Point(161, 48);
+            this.txtMaKhoa.MaxLength = 8;
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.Size = new System.Drawing.Size(190, 28);
             this.txtMaKhoa.TabIndex = 1;

@@ -71,7 +71,7 @@ namespace THITRACNGHIEM
             groupBox1.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = true;
             bdsMONHOC.AddNew();
 
-
+            txtMaMH.Enabled = true;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = 
                 btnReload.Enabled =  btnThoat.Enabled = false;
             gcMonHoc.Enabled = false;
@@ -174,6 +174,7 @@ namespace THITRACNGHIEM
         
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             if(txtMaMH.Text.Trim() == "")
             {
                 MessageBox.Show("Mã môn học không được thiếu" , "", MessageBoxButtons.OK);
@@ -193,6 +194,8 @@ namespace THITRACNGHIEM
                 SqlDataReader dataReaderMonHoc = Program.ExecSqlDataReader(strLenh);
                 dataReaderMonHoc.Read();
                 int check = dataReaderMonHoc.GetInt32(0); // check xem trong db đã có mã môn học này hay chưa
+                dataReaderMonHoc.Close();
+                Program.conn.Close();
                 if (check == 0)
                 {
                     try
@@ -213,8 +216,7 @@ namespace THITRACNGHIEM
                     MessageBox.Show("Mã môn học đã tồn tại.\n", "", MessageBoxButtons.OK);
                     return;
                 }
-                dataReaderMonHoc.Close();
-                Program.conn.Close();
+                
             } else if (suKien.Equals("HC")) // sử dụng nút hiệu chỉnh và chỉ sửa mỗi tên môn học
             {
                 try
@@ -236,6 +238,20 @@ namespace THITRACNGHIEM
                 = btnThoat.Enabled = true;
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
             groupBox1.Enabled = false;
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (bdsMONHOC.Count == 0)
+            {
+                btnXoa.Enabled = false;
+                btnHieuChinh.Enabled = false;
+            }
+            else
+            {
+                btnXoa.Enabled = true;
+                btnHieuChinh.Enabled = true;
+            }
         }
     }
 }

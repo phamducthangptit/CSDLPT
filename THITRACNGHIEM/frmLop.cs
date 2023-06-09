@@ -242,7 +242,9 @@ namespace THITRACNGHIEM
                 SqlDataReader dataReaderLop = Program.ExecSqlDataReader(strLenh);
                 dataReaderLop.Read();
                 int check = Int32.Parse(dataReaderLop.GetString(0));
-                if(check == 0)
+                dataReaderLop.Close();
+                Program.conn.Close();
+                if (check == 0)
                 {
                     try
                     {
@@ -262,8 +264,8 @@ namespace THITRACNGHIEM
                     MessageBox.Show("Mã lớp đã tồn tại trong hệ thống", "", MessageBoxButtons.OK);
                     return;
                 }
-                dataReaderLop.Close();
-                Program.conn.Close();
+                
+                
             } else if (suKien.Equals("HC"))
             {
                 try
@@ -288,6 +290,22 @@ namespace THITRACNGHIEM
                 = btnThoat.Enabled = true;
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
             groupBox1.Enabled = false;
+        }
+
+
+
+        private void gridView2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (bdsLOP.Count == 0)
+            {
+                btnXoa.Enabled = false;
+                btnHieuChinh.Enabled = false;
+            }
+            else
+            {
+                btnXoa.Enabled = true;
+                btnHieuChinh.Enabled = true;
+            }
         }
     }
 }
