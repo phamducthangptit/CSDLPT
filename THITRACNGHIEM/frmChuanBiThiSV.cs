@@ -42,22 +42,6 @@ namespace THITRACNGHIEM
             } else
             {
                 groupBox1.Visible = true;
-                string strLenh = "EXEC SP_CHECKTHI '" + maSV + "'" + ",'" + txtMaMH.Text + "'," + Int32.Parse(txtLan.Text);
-                SqlDataReader dataReaderCheckThi = Program.ExecSqlDataReader(strLenh);
-                dataReaderCheckThi.Read();
-                int check = dataReaderCheckThi.GetInt32(0);
-
-                if (check == 0)
-                {
-                    btnVaoThi.Visible = true;
-                    btnXemLaiKQ.Visible = false;
-                }
-                else
-                {
-                    btnVaoThi.Visible = false;
-                    btnXemLaiKQ.Visible = true;
-                }
-                dataReaderCheckThi.Close();
             }
         }
 
@@ -192,28 +176,34 @@ namespace THITRACNGHIEM
                 else
                 {
                     groupBox1.Visible = true;
-                    string strLenh = "EXEC SP_CHECKTHI '" + maSV + "'" + ",'" + txtMaMH.Text + "'," + Int32.Parse(txtLan.Text);
-                    SqlDataReader dataReaderCheckThi = Program.ExecSqlDataReader(strLenh);
-                    dataReaderCheckThi.Read();
-                    int check = dataReaderCheckThi.GetInt32(0);
-
-                    if (check == 0)
-                    {
-                        btnVaoThi.Visible = true;
-                        btnXemLaiKQ.Visible = false;
-                    }
-                    else
-                    {
-                        btnVaoThi.Visible = false;
-                        btnXemLaiKQ.Visible = true;
-                    }
-                    dataReaderCheckThi.Close();
+                    
                 }
             } catch( Exception ex ) 
             {
                 MessageBox.Show("Lỗi reload " + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            string strLenh = "EXEC SP_CHECKTHI '" + maSV + "'" + ",'" + txtMaMH.Text + "'," + Int32.Parse(txtLan.Text);
+            SqlDataReader dataReaderCheckThi = Program.ExecSqlDataReader(strLenh);
+            dataReaderCheckThi.Read();
+            int check = dataReaderCheckThi.GetInt32(0);
+            int vitriMH = bdsMonHoc.Find("MaMH", this.txtMaMH.Text);
+            this.txtTenMH.Text = ((DataRowView)bdsMonHoc[vitriMH])["TENMH"].ToString();
+            if (check == 0)
+            {
+                btnVaoThi.Visible = true;
+                btnXemLaiKQ.Visible = false;
+            }
+            else
+            {
+                btnVaoThi.Visible = false;
+                btnXemLaiKQ.Visible = true;
+            }
+            dataReaderCheckThi.Close();
         }
     }
 }

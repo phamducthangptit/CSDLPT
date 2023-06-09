@@ -87,7 +87,6 @@
             this.KHOATableAdapter = new THITRACNGHIEM.DSGiangVienTableAdapters.KHOATableAdapter();
             this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
             this.BODETableAdapter = new THITRACNGHIEM.DSGiangVienTableAdapters.BODETableAdapter();
-
             this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
             this.GIAOVIEN_DANGKYTableAdapter = new THITRACNGHIEM.DSGiangVienTableAdapters.GIAOVIEN_DANGKYTableAdapter();
             tENKHLabel = new System.Windows.Forms.Label();
@@ -119,10 +118,10 @@
             // tENKHLabel
             // 
             tENKHLabel.AutoSize = true;
-            tENKHLabel.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            tENKHLabel.Location = new System.Drawing.Point(344, 208);
+            tENKHLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            tENKHLabel.Location = new System.Drawing.Point(334, 209);
             tENKHLabel.Name = "tENKHLabel";
-            tENKHLabel.Size = new System.Drawing.Size(55, 15);
+            tENKHLabel.Size = new System.Drawing.Size(75, 19);
             tENKHLabel.TabIndex = 15;
             tENKHLabel.Text = "Tên khoa:";
             // 
@@ -132,7 +131,7 @@
             tENLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             tENLabel.Location = new System.Drawing.Point(26, 185);
             tENLabel.Name = "tENLabel";
-            tENLabel.Size = new System.Drawing.Size(32, 16);
+            tENLabel.Size = new System.Drawing.Size(39, 19);
             tENLabel.TabIndex = 4;
             tENLabel.Text = "Tên:";
             // 
@@ -142,7 +141,7 @@
             dIACHILabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dIACHILabel.Location = new System.Drawing.Point(346, 75);
             dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(50, 16);
+            dIACHILabel.Size = new System.Drawing.Size(63, 19);
             dIACHILabel.TabIndex = 6;
             dIACHILabel.Text = "Địa chỉ:";
             // 
@@ -152,7 +151,7 @@
             hOLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             hOLabel.Location = new System.Drawing.Point(26, 132);
             hOLabel.Name = "hOLabel";
-            hOLabel.Size = new System.Drawing.Size(26, 16);
+            hOLabel.Size = new System.Drawing.Size(35, 19);
             hOLabel.TabIndex = 2;
             hOLabel.Text = "Họ:";
             // 
@@ -162,7 +161,7 @@
             mAKHLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             mAKHLabel.Location = new System.Drawing.Point(346, 149);
             mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(59, 16);
+            mAKHLabel.Size = new System.Drawing.Size(72, 19);
             mAKHLabel.TabIndex = 8;
             mAKHLabel.Text = "Mã khoa:";
             // 
@@ -172,7 +171,7 @@
             mAGVLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             mAGVLabel.Location = new System.Drawing.Point(26, 87);
             mAGVLabel.Name = "mAGVLabel";
-            mAGVLabel.Size = new System.Drawing.Size(89, 16);
+            mAGVLabel.Size = new System.Drawing.Size(108, 19);
             mAGVLabel.TabIndex = 0;
             mAGVLabel.Text = "Mã giảng viên:";
             // 
@@ -300,7 +299,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1336, 45);
+            this.barDockControlTop.Size = new System.Drawing.Size(1336, 51);
             // 
             // barDockControlBottom
             // 
@@ -314,17 +313,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 596);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 590);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1336, 45);
+            this.barDockControlRight.Location = new System.Drawing.Point(1336, 51);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 596);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 590);
             // 
             // barButtonItem1
             // 
@@ -339,7 +338,7 @@
             this.panelControl1.Controls.Add(this.cmbCoSo);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 45);
+            this.panelControl1.Location = new System.Drawing.Point(0, 51);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1336, 70);
@@ -352,7 +351,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(581, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 17);
+            this.label2.Size = new System.Drawing.Size(222, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "DANH SÁCH GIẢNG VIÊN";
             // 
@@ -362,7 +361,7 @@
             this.cmbCoSo.FormattingEnabled = true;
             this.cmbCoSo.Location = new System.Drawing.Point(151, 26);
             this.cmbCoSo.Name = "cmbCoSo";
-            this.cmbCoSo.Size = new System.Drawing.Size(271, 21);
+            this.cmbCoSo.Size = new System.Drawing.Size(271, 24);
             this.cmbCoSo.TabIndex = 1;
             this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
             // 
@@ -373,7 +372,7 @@
             this.labelControl1.Location = new System.Drawing.Point(65, 25);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(37, 19);
+            this.labelControl1.Size = new System.Drawing.Size(48, 22);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Cơ sở";
             // 
@@ -401,9 +400,9 @@
             this.panelControl2.Controls.Add(this.groupBox1);
             this.panelControl2.Controls.Add(this.gcGiangVien);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 115);
+            this.panelControl2.Location = new System.Drawing.Point(0, 121);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1336, 526);
+            this.panelControl2.Size = new System.Drawing.Size(1336, 520);
             this.panelControl2.TabIndex = 10;
             // 
             // pnlFrmKhoa
@@ -413,8 +412,6 @@
             this.pnlFrmKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFrmKhoa.Location = new System.Drawing.Point(894, 238);
             this.pnlFrmKhoa.Name = "pnlFrmKhoa";
-
-            this.pnlFrmKhoa.Size = new System.Drawing.Size(511, 286);
             this.pnlFrmKhoa.Size = new System.Drawing.Size(440, 280);
             this.pnlFrmKhoa.TabIndex = 20;
             // 
@@ -426,9 +423,6 @@
             this.gcKHOA.MainView = this.gridView2;
             this.gcKHOA.MenuManager = this.barManager1;
             this.gcKHOA.Name = "gcKHOA";
-
-            this.gcKHOA.Size = new System.Drawing.Size(507, 231);
-
             this.gcKHOA.Size = new System.Drawing.Size(436, 225);
             this.gcKHOA.TabIndex = 1;
             this.gcKHOA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -491,7 +485,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(105, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 22);
+            this.label1.Size = new System.Drawing.Size(227, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH SÁCH KHOA";
             // 
@@ -512,9 +506,6 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(2, 238);
             this.groupBox1.Name = "groupBox1";
-
-            this.groupBox1.Size = new System.Drawing.Size(821, 286);
-
             this.groupBox1.Size = new System.Drawing.Size(892, 280);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
@@ -526,8 +517,6 @@
             this.txtMaKhoa.Enabled = false;
             this.txtMaKhoa.Location = new System.Drawing.Point(415, 149);
             this.txtMaKhoa.Name = "txtMaKhoa";
-
-            this.txtMaKhoa.Size = new System.Drawing.Size(148, 21);
             this.txtMaKhoa.Size = new System.Drawing.Size(148, 23);
             this.txtMaKhoa.TabIndex = 21;
             // 
@@ -540,9 +529,8 @@
             // 
             this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGIANGVIEN, "DIACHI", true));
             this.txtDiaChi.Location = new System.Drawing.Point(415, 75);
+            this.txtDiaChi.MaxLength = 50;
             this.txtDiaChi.Name = "txtDiaChi";
-
-            this.txtDiaChi.Size = new System.Drawing.Size(386, 21);
             this.txtDiaChi.Size = new System.Drawing.Size(386, 23);
             this.txtDiaChi.TabIndex = 20;
             // 
@@ -550,9 +538,8 @@
             // 
             this.txtTenGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGIANGVIEN, "TEN", true));
             this.txtTenGV.Location = new System.Drawing.Point(140, 184);
+            this.txtTenGV.MaxLength = 10;
             this.txtTenGV.Name = "txtTenGV";
-
-            this.txtTenGV.Size = new System.Drawing.Size(139, 21);
             this.txtTenGV.Size = new System.Drawing.Size(139, 23);
             this.txtTenGV.TabIndex = 19;
             // 
@@ -560,8 +547,8 @@
             // 
             this.txtHoGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGIANGVIEN, "HO", true));
             this.txtHoGV.Location = new System.Drawing.Point(140, 132);
+            this.txtHoGV.MaxLength = 50;
             this.txtHoGV.Name = "txtHoGV";
-            this.txtHoGV.Size = new System.Drawing.Size(139, 21);
             this.txtHoGV.Size = new System.Drawing.Size(139, 23);
             this.txtHoGV.TabIndex = 18;
             // 
@@ -569,8 +556,8 @@
             // 
             this.txtMaGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGIANGVIEN, "MAGV", true));
             this.txtMaGV.Location = new System.Drawing.Point(140, 87);
+            this.txtMaGV.MaxLength = 8;
             this.txtMaGV.Name = "txtMaGV";
-            this.txtMaGV.Size = new System.Drawing.Size(139, 21);
             this.txtMaGV.Size = new System.Drawing.Size(139, 23);
             this.txtMaGV.TabIndex = 17;
             // 
@@ -580,7 +567,7 @@
             this.txtTenKhoa.Enabled = false;
             this.txtTenKhoa.Location = new System.Drawing.Point(415, 205);
             this.txtTenKhoa.Name = "txtTenKhoa";
-            this.txtTenKhoa.Size = new System.Drawing.Size(148, 21);
+            this.txtTenKhoa.Size = new System.Drawing.Size(148, 23);
             this.txtTenKhoa.TabIndex = 16;
             // 
             // gcGiangVien
@@ -606,6 +593,7 @@
             this.colMAKH});
             this.gridView1.GridControl = this.gcGiangVien;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colMAGV
             // 
@@ -674,10 +662,9 @@
             // 
             this.GIAOVIEN_DANGKYTableAdapter.ClearBeforeFill = true;
             // 
-
             // frmGiangVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1336, 661);
             this.Controls.Add(this.panelControl2);

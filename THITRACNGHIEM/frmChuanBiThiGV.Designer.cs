@@ -65,6 +65,7 @@
             this.colSOCAUTHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTHOIGIAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnThiThu = new System.Windows.Forms.Button();
             this.txtTG = new System.Windows.Forms.TextBox();
             this.txtSoCauThi = new System.Windows.Forms.TextBox();
             this.txtLan = new System.Windows.Forms.TextBox();
@@ -77,7 +78,6 @@
             this.bdsLop = new System.Windows.Forms.BindingSource(this.components);
             this.txtMaLop = new System.Windows.Forms.TextBox();
             this.MONHOCTableAdapter = new THITRACNGHIEM.DSChuanBiThiTableAdapters.MONHOCTableAdapter();
-            this.btnThiThu = new System.Windows.Forms.Button();
             mALOPLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
@@ -350,6 +350,7 @@
             this.colTHOIGIAN});
             this.gridView1.GridControl = this.gIAOVIEN_DANGKYGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colMAMH
             // 
@@ -442,6 +443,17 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
+            // 
+            // btnThiThu
+            // 
+            this.btnThiThu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnThiThu.Location = new System.Drawing.Point(464, 234);
+            this.btnThiThu.Name = "btnThiThu";
+            this.btnThiThu.Size = new System.Drawing.Size(134, 39);
+            this.btnThiThu.TabIndex = 18;
+            this.btnThiThu.Text = "Thi thử";
+            this.btnThiThu.UseVisualStyleBackColor = true;
+            this.btnThiThu.Click += new System.EventHandler(this.btnThiThu_Click);
             // 
             // txtTG
             // 
@@ -546,17 +558,6 @@
             // MONHOCTableAdapter
             // 
             this.MONHOCTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnThiThu
-            // 
-            this.btnThiThu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnThiThu.Location = new System.Drawing.Point(464, 234);
-            this.btnThiThu.Name = "btnThiThu";
-            this.btnThiThu.Size = new System.Drawing.Size(134, 39);
-            this.btnThiThu.TabIndex = 18;
-            this.btnThiThu.Text = "Thi thử";
-            this.btnThiThu.UseVisualStyleBackColor = true;
-            this.btnThiThu.Click += new System.EventHandler(this.btnThiThu_Click);
             // 
             // frmChuanBiThiGV
             // 
