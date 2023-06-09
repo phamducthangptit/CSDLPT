@@ -384,7 +384,7 @@ namespace THITRACNGHIEM {
             
             private global::System.Data.DataColumn columnSTT;
             
-            private global::System.Data.DataColumn columnDACHON;
+            private global::System.Data.DataColumn columnDAP_AN_CHON;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -445,9 +445,9 @@ namespace THITRACNGHIEM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DACHONColumn {
+            public global::System.Data.DataColumn DAP_AN_CHONColumn {
                 get {
-                    return this.columnDACHON;
+                    return this.columnDAP_AN_CHON;
                 }
             }
             
@@ -488,13 +488,13 @@ namespace THITRACNGHIEM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BAITHIRow AddBAITHIRow(BODERow parentBODERowByFK_BAITHI_BODE, int CAUHOI, int STT, string DACHON) {
+            public BAITHIRow AddBAITHIRow(BODERow parentBODERowByFK_BAITHI_BODE, int CAUHOI, int STT, string DAP_AN_CHON) {
                 BAITHIRow rowBAITHIRow = ((BAITHIRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         CAUHOI,
                         STT,
-                        DACHON};
+                        DAP_AN_CHON};
                 if ((parentBODERowByFK_BAITHI_BODE != null)) {
                     columnValuesArray[0] = parentBODERowByFK_BAITHI_BODE[0];
                 }
@@ -531,7 +531,7 @@ namespace THITRACNGHIEM {
                 this.columnBAITHI = base.Columns["BAITHI"];
                 this.columnCAUHOI = base.Columns["CAUHOI"];
                 this.columnSTT = base.Columns["STT"];
-                this.columnDACHON = base.Columns["DACHON"];
+                this.columnDAP_AN_CHON = base.Columns["DAP_AN_CHON"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -543,16 +543,14 @@ namespace THITRACNGHIEM {
                 base.Columns.Add(this.columnCAUHOI);
                 this.columnSTT = new global::System.Data.DataColumn("STT", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTT);
-                this.columnDACHON = new global::System.Data.DataColumn("DACHON", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDACHON);
+                this.columnDAP_AN_CHON = new global::System.Data.DataColumn("DAP_AN_CHON", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDAP_AN_CHON);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnBAITHI,
                                 this.columnCAUHOI}, true));
                 this.columnBAITHI.AllowDBNull = false;
                 this.columnCAUHOI.AllowDBNull = false;
-                this.columnSTT.AllowDBNull = false;
-                this.columnDACHON.AllowDBNull = false;
-                this.columnDACHON.MaxLength = 1;
+                this.columnDAP_AN_CHON.MaxLength = 1;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1391,7 +1389,12 @@ namespace THITRACNGHIEM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int STT {
                 get {
-                    return ((int)(this[this.tableBAITHI.STTColumn]));
+                    try {
+                        return ((int)(this[this.tableBAITHI.STTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'STT\' in table \'BAITHI\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableBAITHI.STTColumn] = value;
@@ -1400,12 +1403,17 @@ namespace THITRACNGHIEM {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string DACHON {
+            public string DAP_AN_CHON {
                 get {
-                    return ((string)(this[this.tableBAITHI.DACHONColumn]));
+                    try {
+                        return ((string)(this[this.tableBAITHI.DAP_AN_CHONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DAP_AN_CHON\' in table \'BAITHI\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableBAITHI.DACHONColumn] = value;
+                    this[this.tableBAITHI.DAP_AN_CHONColumn] = value;
                 }
             }
             
@@ -1418,6 +1426,30 @@ namespace THITRACNGHIEM {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_BAITHI_BODE"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSTTNull() {
+                return this.IsNull(this.tableBAITHI.STTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSTTNull() {
+                this[this.tableBAITHI.STTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDAP_AN_CHONNull() {
+                return this.IsNull(this.tableBAITHI.DAP_AN_CHONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDAP_AN_CHONNull() {
+                this[this.tableBAITHI.DAP_AN_CHONColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2016,40 +2048,43 @@ namespace THITRACNGHIEM.DSBoDeTableAdapters {
             tableMapping.ColumnMappings.Add("BAITHI", "BAITHI");
             tableMapping.ColumnMappings.Add("CAUHOI", "CAUHOI");
             tableMapping.ColumnMappings.Add("STT", "STT");
-            tableMapping.ColumnMappings.Add("DACHON", "DACHON");
+            tableMapping.ColumnMappings.Add("DAP_AN_CHON", "DAP_AN_CHON");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [BAITHI] WHERE (([BAITHI] = @Original_BAITHI) AND ([CAUHOI] = @Origin" +
-                "al_CAUHOI) AND ([STT] = @Original_STT) AND ([DACHON] = @Original_DACHON))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [BAITHI] WHERE (([BAITHI] = @Original_BAITHI) AND ([CAUHOI] = @Original_CAUHOI) AND ((@IsNull_STT = 1 AND [STT] IS NULL) OR ([STT] = @Original_STT)) AND ((@IsNull_DAP_AN_CHON = 1 AND [DAP_AN_CHON] IS NULL) OR ([DAP_AN_CHON] = @Original_DAP_AN_CHON)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BAITHI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAITHI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAUHOI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAUHOI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DACHON", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DACHON", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DAP_AN_CHON", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DAP_AN_CHON", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DAP_AN_CHON", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DAP_AN_CHON", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [BAITHI] ([BAITHI], [CAUHOI], [STT], [DACHON]) VALUES (@BAITHI, @CAUH" +
-                "OI, @STT, @DACHON);\r\nSELECT BAITHI, CAUHOI, STT, DACHON FROM BAITHI WHERE (BAITH" +
-                "I = @BAITHI) AND (CAUHOI = @CAUHOI)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [BAITHI] ([BAITHI], [CAUHOI], [STT], [DAP_AN_CHON]) VALUES (@BAITHI, " +
+                "@CAUHOI, @STT, @DAP_AN_CHON);\r\nSELECT BAITHI, CAUHOI, STT, DAP_AN_CHON FROM BAIT" +
+                "HI WHERE (BAITHI = @BAITHI) AND (CAUHOI = @CAUHOI)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BAITHI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAITHI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAUHOI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAUHOI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DACHON", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DACHON", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DAP_AN_CHON", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DAP_AN_CHON", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [BAITHI] SET [BAITHI] = @BAITHI, [CAUHOI] = @CAUHOI, [STT] = @STT, [DACHON] = @DACHON WHERE (([BAITHI] = @Original_BAITHI) AND ([CAUHOI] = @Original_CAUHOI) AND ([STT] = @Original_STT) AND ([DACHON] = @Original_DACHON));
-SELECT BAITHI, CAUHOI, STT, DACHON FROM BAITHI WHERE (BAITHI = @BAITHI) AND (CAUHOI = @CAUHOI)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [BAITHI] SET [BAITHI] = @BAITHI, [CAUHOI] = @CAUHOI, [STT] = @STT, [DAP_AN_CHON] = @DAP_AN_CHON WHERE (([BAITHI] = @Original_BAITHI) AND ([CAUHOI] = @Original_CAUHOI) AND ((@IsNull_STT = 1 AND [STT] IS NULL) OR ([STT] = @Original_STT)) AND ((@IsNull_DAP_AN_CHON = 1 AND [DAP_AN_CHON] IS NULL) OR ([DAP_AN_CHON] = @Original_DAP_AN_CHON)));
+SELECT BAITHI, CAUHOI, STT, DAP_AN_CHON FROM BAITHI WHERE (BAITHI = @BAITHI) AND (CAUHOI = @CAUHOI)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BAITHI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAITHI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAUHOI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAUHOI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DACHON", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DACHON", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DAP_AN_CHON", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DAP_AN_CHON", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BAITHI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BAITHI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAUHOI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAUHOI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_STT", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DACHON", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DACHON", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DAP_AN_CHON", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DAP_AN_CHON", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DAP_AN_CHON", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DAP_AN_CHON", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2065,7 +2100,7 @@ SELECT BAITHI, CAUHOI, STT, DACHON FROM BAITHI WHERE (BAITHI = @BAITHI) AND (CAU
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT BAITHI, CAUHOI, STT, DACHON FROM BAITHI";
+            this._commandCollection[0].CommandText = "SELECT        BAITHI, CAUHOI, STT, DAP_AN_CHON\r\nFROM            BAITHI";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2126,15 +2161,24 @@ SELECT BAITHI, CAUHOI, STT, DACHON FROM BAITHI WHERE (BAITHI = @BAITHI) AND (CAU
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_BAITHI, int Original_CAUHOI, int Original_STT, string Original_DACHON) {
+        public virtual int Delete(int Original_BAITHI, int Original_CAUHOI, global::System.Nullable<int> Original_STT, string Original_DAP_AN_CHON) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_BAITHI));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_CAUHOI));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_STT));
-            if ((Original_DACHON == null)) {
-                throw new global::System.ArgumentNullException("Original_DACHON");
+            if ((Original_STT.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_STT.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_DACHON));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DAP_AN_CHON == null)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DAP_AN_CHON));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2156,15 +2200,20 @@ SELECT BAITHI, CAUHOI, STT, DACHON FROM BAITHI WHERE (BAITHI = @BAITHI) AND (CAU
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int BAITHI, int CAUHOI, int STT, string DACHON) {
+        public virtual int Insert(int BAITHI, int CAUHOI, global::System.Nullable<int> STT, string DAP_AN_CHON) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(BAITHI));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CAUHOI));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(STT));
-            if ((DACHON == null)) {
-                throw new global::System.ArgumentNullException("DACHON");
+            if ((STT.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(STT.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DACHON));
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((DAP_AN_CHON == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DAP_AN_CHON));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2186,24 +2235,38 @@ SELECT BAITHI, CAUHOI, STT, DACHON FROM BAITHI WHERE (BAITHI = @BAITHI) AND (CAU
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int BAITHI, int CAUHOI, int STT, string DACHON, int Original_BAITHI, int Original_CAUHOI, int Original_STT, string Original_DACHON) {
+        public virtual int Update(int BAITHI, int CAUHOI, global::System.Nullable<int> STT, string DAP_AN_CHON, int Original_BAITHI, int Original_CAUHOI, global::System.Nullable<int> Original_STT, string Original_DAP_AN_CHON) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(BAITHI));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(CAUHOI));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(STT));
-            if ((DACHON == null)) {
-                throw new global::System.ArgumentNullException("DACHON");
+            if ((STT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(STT.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DACHON));
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((DAP_AN_CHON == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DAP_AN_CHON));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_BAITHI));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_CAUHOI));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_STT));
-            if ((Original_DACHON == null)) {
-                throw new global::System.ArgumentNullException("Original_DACHON");
+            if ((Original_STT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_STT.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_DACHON));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DAP_AN_CHON == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_DAP_AN_CHON));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2225,8 +2288,8 @@ SELECT BAITHI, CAUHOI, STT, DACHON FROM BAITHI WHERE (BAITHI = @BAITHI) AND (CAU
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int STT, string DACHON, int Original_BAITHI, int Original_CAUHOI, int Original_STT, string Original_DACHON) {
-            return this.Update(Original_BAITHI, Original_CAUHOI, STT, DACHON, Original_BAITHI, Original_CAUHOI, Original_STT, Original_DACHON);
+        public virtual int Update(global::System.Nullable<int> STT, string DAP_AN_CHON, int Original_BAITHI, int Original_CAUHOI, global::System.Nullable<int> Original_STT, string Original_DAP_AN_CHON) {
+            return this.Update(Original_BAITHI, Original_CAUHOI, STT, DAP_AN_CHON, Original_BAITHI, Original_CAUHOI, Original_STT, Original_DAP_AN_CHON);
         }
     }
     
