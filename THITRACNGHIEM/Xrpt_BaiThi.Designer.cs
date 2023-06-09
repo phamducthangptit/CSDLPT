@@ -54,6 +54,9 @@
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -74,9 +77,6 @@
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.bds = new System.Windows.Forms.BindingSource(this.components);
             this.dsBaiThi = new THITRACNGHIEM.DsBaiThi();
-            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDapAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -315,6 +315,36 @@
             this.ReportHeader.HeightF = 277.2916F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // xrLabel6
+            // 
+            this.xrLabel6.ForeColor = System.Drawing.Color.Firebrick;
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(81.25F, 22.44466F);
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(313.5417F, 24.19433F);
+            this.xrLabel6.StylePriority.UseForeColor = false;
+            this.xrLabel6.StylePriority.UseTextAlignment = false;
+            this.xrLabel6.Text = "HỌC VIỆN CÔNG NGHỆ";
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel7
+            // 
+            this.xrLabel7.ForeColor = System.Drawing.Color.Firebrick;
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(81.25F, 46.639F);
+            this.xrLabel7.Name = "xrLabel7";
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(568.75F, 24.19433F);
+            this.xrLabel7.StylePriority.UseForeColor = false;
+            this.xrLabel7.StylePriority.UseTextAlignment = false;
+            this.xrLabel7.Text = "BƯU CHÍNH VIỄN THÔNG CƠ SỞ TP.HỒ CHÍ MINH";
+            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::THITRACNGHIEM.Properties.Resources.logo, true);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(81.25F, 70.83334F);
+            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
+            // 
             // xrTable1
             // 
             this.xrTable1.BorderDashStyle = DevExpress.XtraPrinting.BorderDashStyle.Solid;
@@ -508,36 +538,6 @@
             // 
             this.dsBaiThi.DataSetName = "DsBaiThi";
             this.dsBaiThi.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // xrLabel6
-            // 
-            this.xrLabel6.ForeColor = System.Drawing.Color.Firebrick;
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(81.25F, 22.44466F);
-            this.xrLabel6.Name = "xrLabel6";
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(313.5417F, 24.19433F);
-            this.xrLabel6.StylePriority.UseForeColor = false;
-            this.xrLabel6.StylePriority.UseTextAlignment = false;
-            this.xrLabel6.Text = "HỌC VIỆN CÔNG NGHỆ";
-            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // xrLabel7
-            // 
-            this.xrLabel7.ForeColor = System.Drawing.Color.Firebrick;
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(81.25F, 46.639F);
-            this.xrLabel7.Name = "xrLabel7";
-            this.xrLabel7.SizeF = new System.Drawing.SizeF(568.75F, 24.19433F);
-            this.xrLabel7.StylePriority.UseForeColor = false;
-            this.xrLabel7.StylePriority.UseTextAlignment = false;
-            this.xrLabel7.Text = "BƯU CHÍNH VIỄN THÔNG CƠ SỞ TP.HỒ CHÍ MINH";
-            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // xrPictureBox1
-            // 
-            this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource(global::THITRACNGHIEM.Properties.Resources.logo, true);
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.SizeF = new System.Drawing.SizeF(81.25F, 70.83334F);
-            this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
             // 
             // Xrpt_BaiThi
             // 

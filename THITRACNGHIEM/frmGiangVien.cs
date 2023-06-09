@@ -145,7 +145,7 @@ namespace THITRACNGHIEM
             bdsGIANGVIEN.AddNew();
             txtMaKhoa.Text = maKhoa;
 
-
+            this.txtMaGV.Enabled = true;
             groupBox1.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = true;
 
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = 
@@ -207,7 +207,9 @@ namespace THITRACNGHIEM
                 SqlDataReader dataReaderGV = Program.ExecSqlDataReader(strLenh);
                 dataReaderGV.Read();
                 int check = dataReaderGV.GetInt32(0); // check xem trong db đã có mã gv này hay chưa
-                if(check == 0)
+                dataReaderGV.Close();
+                Program.conn.Close();
+                if (check == 0)
                 {
                     try
                     {
@@ -225,8 +227,7 @@ namespace THITRACNGHIEM
                     MessageBox.Show("Mã giảng viên đã tồn tại.\n", "", MessageBoxButtons.OK);
                     return;
                 }
-                dataReaderGV.Close();
-                Program.conn.Close();
+                
             } else if (suKien.Equals("HC"))
             {
                 try
@@ -263,7 +264,6 @@ namespace THITRACNGHIEM
                 MessageBox.Show("Không thể xóa giảng viên này vì giảng viên đã đăng kí thi", "", MessageBoxButtons.OK);
                 return;
             }
-            MessageBox.Show(bdsBODE.Count + " " + bdsGVDK.Count);
             if (MessageBox.Show("Bạn có thật sự muốn xóa giảng viên này?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
@@ -286,5 +286,17 @@ namespace THITRACNGHIEM
             }
         }
 
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if(bdsGIANGVIEN.Count == 0)
+            {
+                btnXoa.Enabled = false;
+                btnHieuChinh.Enabled = false;
+            } else
+            {
+                btnXoa.Enabled = true;
+                btnHieuChinh.Enabled = true;
+            }
+        }
     }
 }

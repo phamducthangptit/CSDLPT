@@ -22,16 +22,6 @@ namespace THITRACNGHIEM
             InitializeComponent();
         }
 
-        private void bODEBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsBODE.EndEdit();
-            maMH = ((DataRowView)bdsMONHOC[bdsMONHOC.Position])["MAMH"].ToString();
-            MessageBox.Show(maMH);
-            this.tableAdapterManager.UpdateAll(this.dSBoDe);
-
-        }
-
         private void frmBoDe_Load(object sender, EventArgs e)
         {
             dSBoDe.EnforceConstraints = false;
@@ -62,6 +52,9 @@ namespace THITRACNGHIEM
             cmbDapAn.Items.Add("B");
             cmbDapAn.Items.Add("C");
             cmbDapAn.Items.Add("D");
+
+            btnGhi.Enabled = btnPhucHoi.Enabled = false;
+            groupBox1.Enabled = false;
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -152,7 +145,9 @@ namespace THITRACNGHIEM
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(bdsBAITHI.Count > 0)
+
+
+            if (bdsBAITHI.Count > 0)
             {
                 MessageBox.Show("Không thể xóa câu hỏi này vì đã được thi!", "", MessageBoxButtons.OK);
                 return;
@@ -184,6 +179,21 @@ namespace THITRACNGHIEM
             ReportPrintTool print = new ReportPrintTool(rpt);
             print.ShowPreviewDialog();
 
+        }
+
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (bdsBODE.Count == 0)
+            {
+                btnXoa.Enabled = false;
+                btnHieuChinh.Enabled = false;
+            }
+            else
+            {
+                btnXoa.Enabled = true;
+                btnHieuChinh.Enabled = true;
+            }
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

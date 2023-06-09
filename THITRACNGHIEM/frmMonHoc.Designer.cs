@@ -323,6 +323,7 @@
             this.colTENMH});
             this.gridView1.GridControl = this.gcMonHoc;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colMAMH
             // 
@@ -346,6 +347,7 @@
             // 
             this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMONHOC, "MAMH", true));
             this.txtMaMH.Location = new System.Drawing.Point(181, 63);
+            this.txtMaMH.MaxLength = 5;
             this.txtMaMH.Name = "txtMaMH";
             this.txtMaMH.Size = new System.Drawing.Size(184, 28);
             this.txtMaMH.TabIndex = 8;
@@ -354,6 +356,7 @@
             // 
             this.txtTenMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMONHOC, "TENMH", true));
             this.txtTenMH.Location = new System.Drawing.Point(614, 58);
+            this.txtTenMH.MaxLength = 50;
             this.txtTenMH.Name = "txtTenMH";
             this.txtTenMH.Size = new System.Drawing.Size(365, 28);
             this.txtTenMH.TabIndex = 10;

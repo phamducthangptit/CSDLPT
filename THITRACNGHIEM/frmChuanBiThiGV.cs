@@ -121,5 +121,11 @@ namespace THITRACNGHIEM
             }
             return null;
         }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            int vitriMH = bdsMonHoc.Find("MaMH", this.txtMaMH.Text);
+            this.txtTenMH.Text = ((DataRowView)bdsMonHoc[vitriMH])["TENMH"].ToString();
+        }
     }
 }

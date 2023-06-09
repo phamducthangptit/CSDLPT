@@ -570,6 +570,7 @@
             // 
             this.txtPASS.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSinhVien, "PASS", true));
             this.txtPASS.Location = new System.Drawing.Point(124, 217);
+            this.txtPASS.MaxLength = 20;
             this.txtPASS.Name = "txtPASS";
             this.txtPASS.Size = new System.Drawing.Size(213, 28);
             this.txtPASS.TabIndex = 19;
@@ -578,6 +579,7 @@
             // 
             this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSinhVien, "DIACHI", true));
             this.txtDiaChi.Location = new System.Drawing.Point(124, 165);
+            this.txtDiaChi.MaxLength = 100;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(422, 28);
             this.txtDiaChi.TabIndex = 18;
@@ -586,6 +588,7 @@
             // 
             this.txtTen.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSinhVien, "TEN", true));
             this.txtTen.Location = new System.Drawing.Point(350, 113);
+            this.txtTen.MaxLength = 10;
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(171, 28);
             this.txtTen.TabIndex = 17;
@@ -594,6 +597,7 @@
             // 
             this.txtHo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSinhVien, "HO", true));
             this.txtHo.Location = new System.Drawing.Point(124, 113);
+            this.txtHo.MaxLength = 50;
             this.txtHo.Name = "txtHo";
             this.txtHo.Size = new System.Drawing.Size(156, 28);
             this.txtHo.TabIndex = 16;
@@ -602,6 +606,7 @@
             // 
             this.txtMaSV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSinhVien, "MASV", true));
             this.txtMaSV.Location = new System.Drawing.Point(124, 60);
+            this.txtMaSV.MaxLength = 8;
             this.txtMaSV.Name = "txtMaSV";
             this.txtMaSV.Size = new System.Drawing.Size(159, 28);
             this.txtMaSV.TabIndex = 15;
@@ -646,6 +651,7 @@
             this.colMAKH});
             this.gridView2.GridControl = this.gcLop;
             this.gridView2.Name = "gridView2";
+            this.gridView2.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView2_FocusedRowChanged);
             // 
             // colMALOP1
             // 
