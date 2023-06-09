@@ -64,7 +64,8 @@ namespace THITRACNGHIEM
         {
             string tuNgay = deTuNgay.Text.Trim();
             string denNgay = deDenNgay.Text.Trim();
-            Xrpt_THONG_KE_DK_THI1 rpt;
+
+            
             if (tuNgay== "")
             {
                 MessageBox.Show("Ngày bắt đầu không được thiếu", "", MessageBoxButtons.OK);
@@ -78,6 +79,12 @@ namespace THITRACNGHIEM
                 deDenNgay.Focus();
                 return;
             }
+            if (tuNgay.CompareTo(denNgay) > 0)
+            {
+                MessageBox.Show("Ngày kết thúc không thể nhỏ hơn ngày bắt đầu", "", MessageBoxButtons.OK);
+                deDenNgay.Focus();
+                return;
+            }
             if (tuNgay == tuNgay1 && denNgay == denNgay1 )
             {
                 thaydoiNgay = 0;
@@ -85,6 +92,7 @@ namespace THITRACNGHIEM
             {
                 thaydoiNgay = 1;
             }
+            Xrpt_THONG_KE_DK_THI1 rpt;
             if (chuyenCoSo == 0 && thaydoiNgay == 0)
             {
                 rpt = new Xrpt_THONG_KE_DK_THI1(0, chuyenDangNgay(tuNgay),chuyenDangNgay( denNgay));

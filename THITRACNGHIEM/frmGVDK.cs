@@ -81,7 +81,9 @@ namespace THITRACNGHIEM
             cmbMH.DataSource = dt1;
             cmbMH.DisplayMember = "TENMH";
             cmbMH.ValueMember = "MAMH";
-            //cmbMH.SelectedValue = ((DataRowView)bdsGVDK[0])["MAMH"].ToString();
+            if (bdsGVDK.Position != -1)
+                cmbMH.SelectedValue = ((DataRowView)bdsGVDK[0])["MAMH"].ToString();
+            else cmbMH.SelectedValue = "MATRONG";
             string sql2 = "SELECT * FROM V_DS_GV";
             DataTable dt2 = Program.ExecSqlDataTable(sql2);
             DataRow newRow2 = dt2.NewRow();
@@ -93,12 +95,17 @@ namespace THITRACNGHIEM
             cmbGV.DataSource = dt2;
             cmbGV.DisplayMember = "TENGV";
             cmbGV.ValueMember = "MAGV";
+            if (bdsGVDK.Position != -1)
+                cmbGV.SelectedValue = ((DataRowView)bdsGVDK[0])["MAGV"].ToString();
+            else cmbGV.SelectedValue = "MATRONG";
             //cmbGV.SelectedValue = ((DataRowView)bdsGVDK[0])["MAGV"].ToString();
             cmbTrinhDo.Items.Add("A");
             cmbTrinhDo.Items.Add("B");
             cmbTrinhDo.Items.Add("C");
+            cmbTrinhDo.SelectedItem = "A";
             cmbLan.Items.Add("1");
             cmbLan.Items.Add("2");
+            cmbLan.SelectedItem = "1";
         }
 
         private void cmbCoSo_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,7 +153,17 @@ namespace THITRACNGHIEM
                 cmbGV.DataSource = dt2;
                 cmbGV.DisplayMember = "TENGV";
                 cmbGV.ValueMember = "MAGV";
-                cmbGV.SelectedValue = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAGV"].ToString();
+                if (bdsGVDK.Position != -1) {
+                    cmbGV.SelectedValue = ((DataRowView)bdsGVDK[0])["MAGV"].ToString();
+                    cmbMH.SelectedValue = ((DataRowView)bdsGVDK[0])["MAMH"].ToString();
+                }
+                else {
+                    cmbGV.SelectedValue = "MATRONG";
+                    cmbMH.SelectedValue = "MATRONG";
+                }
+                cmbTrinhDo.SelectedItem = "A";
+                cmbLan.SelectedItem = "1";
+                //cmbGV.SelectedValue = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAGV"].ToString();
             }
         }
         
@@ -268,12 +285,16 @@ namespace THITRACNGHIEM
             }
 
 
-
- 
-
             if (ngayThi == "")
             {
                 MessageBox.Show("Ngày thi không được thiếu", "", MessageBoxButtons.OK);
+                deNgayThi.Focus();
+                return;
+            }
+            string currentDay = DateTime.Today.AddDays(7).ToString("dd/MM/yyyy");
+            if (ngayThi.CompareTo(currentDay) < 0)
+            {
+                MessageBox.Show("Ngày thi phải được đăng kí trước 1 tuần!" + currentDay, "", MessageBoxButtons.OK);
                 deNgayThi.Focus();
                 return;
             }
@@ -284,6 +305,34 @@ namespace THITRACNGHIEM
                 return;
             }
 
+            if (int.Parse(lan) < 1 || int.Parse(lan) > 2)
+            {
+                MessageBox.Show("Lần thi phải lớn hơn hoặc bằng 1 và nhỏ hơn hoặc bằng 2", "", MessageBoxButtons.OK);
+                cmbLan.Focus();
+                return;
+            }
+            if (int.Parse(lan) == 2)
+            {
+                string strLenh1 = "EXEC SP_CHECKEXISTGVDK '" + maMH + "', '"
+                                + maLop + "', '1'";
+                SqlDataReader dataReaderGVDK1 = Program.ExecSqlDataReader(strLenh1);
+                dataReaderGVDK1.Read();
+
+                int check1 = Int32.Parse(dataReaderGVDK1.GetString(0)); // check xem trong db đã có mã gv này hay chưa
+                dataReaderGVDK1.Close();
+                Program.conn.Close();
+                if( check1 == 0)
+                {
+                    MessageBox.Show("Lớp " +
+                        ((DataRowView)bdsLop[bdsLop.Position])["TENLOP"].ToString().Trim()
+                        +"chưa đăng kí thi lần 1 ứng với môn học "
+                        + ((DataRowView)cmbMH.SelectedItem)["TENMH"].ToString().Trim()
+                        + " nên chưa thể đăng kí thi lần 2!"
+                        , "", MessageBoxButtons.OK);
+                    cmbLan.Focus();
+                    return;
+                }
+            }
             if (soCauThi == "")
             {
                 MessageBox.Show("Số câu thi không được thiếu", "", MessageBoxButtons.OK);
@@ -317,14 +366,23 @@ namespace THITRACNGHIEM
                 txtThoiGian.Focus();
                 return;
             }
-            if (int.Parse(lan) < 1 || int.Parse(lan) > 2)
+            if (suKien.Equals("HC"))
             {
-                MessageBox.Show("Lần thi phải lớn hơn hoặc bằng 1 và nhỏ hơn hoặc bằng 2", "", MessageBoxButtons.OK);
-                cmbLan.Focus();
-                return;
+               string maMH1 = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAMH"].ToString().Trim();
+               string maLop1 = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MALOP"].ToString().Trim();
+               string lan1 = ((DataRowView)bdsGVDK[bdsGVDK.Position])["LAN"].ToString().Trim();
+                if (maMH.Equals(maMH1) && maLop.Equals(maLop1) && lan.Equals(lan1))
+                {
+                    panelControl2.Enabled = false;
+                    gcGVDK.Enabled = true;
+                    gcLop.Enabled = true;
+
+                    btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled =
+                        btnReload.Enabled = btnThoat.Enabled = true;
+                    btnGhi.Enabled = btnPhucHoi.Enabled = false;
+                    return;
+                }
             }
-            //maLop = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MALOP"].ToString();
-            if (suKien.Equals("THEM") || (suKien.Equals("HC"))) {
                 string strLenh = "EXEC SP_CHECKEXISTGVDK '" + maMH + "', '"
                                 + maLop + "', '"+
                                  lan+"'";
@@ -337,7 +395,7 @@ namespace THITRACNGHIEM
                 if (check == 0)
                 {
                      if(suKien.Equals("THEM"))
-                    {
+                       {
                         
                         //MessageBox.Show(chuyenDangNgay(ngayThi), "", MessageBoxButtons.OK);
                         string strLenh1 = "SP_GIANGVIEN_DANGKI_THI '"
@@ -354,7 +412,7 @@ namespace THITRACNGHIEM
                         int result = Program.ExecSqlNonQuery(strLenh1, Program.connstr);
                         if (result == 0)
                         {
-                            //MessageBox.Show("Lưu thành công","", MessageBoxButtons.OK);
+                            MessageBox.Show("Lưu thành công","", MessageBoxButtons.OK);
                         }
                         this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
                         this.LOPTableAdapter.Fill(this.dSGVDK.LOP);
@@ -365,46 +423,46 @@ namespace THITRACNGHIEM
                         this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
                         this.GIAOVIEN_DANGKYTableAdapter.Fill(this.dSGVDK.GIAOVIEN_DANGKY);
 
-                    }else
-                    {
-                        MessageBox.Show("Lớp học này đã được đăng kí thi rồi.\n", "", MessageBoxButtons.OK);
-                        return;
-                    }
-                }
-                else
-                {
-                    if (suKien.Equals("HC"))
+                    } else if (suKien.Equals("HC"))
                     {
                         string strLenh1 = "SP_GIANGVIEN_DANGKI_THI '"
-                           + maLop + "', '"
-                           + maMH + "', '"
-                            + maGV + "', '"
-                            + trinhDo + "', '"
-                            + chuyenDangNgay(ngayThi) + "', '"
-                           + lan + "', '"
-                           + soCauThi + "', '"
-                           + thoiGian + "', '"
-                           + "1'"
-                           ;
-                        int result = Program.ExecSqlNonQuery(strLenh1, Program.connstr);
-                        if (result == 0)
-                        {
-                            //MessageBox.Show("Lưu thành công","", MessageBoxButtons.OK);
-                        }
-                        this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                        this.LOPTableAdapter.Fill(this.dSGVDK.LOP);
-                        bdsLop.Position = viTriLop;
+                               + maLop + "', '"
+                               + maMH + "', '"
+                                + maGV + "', '"
+                                + trinhDo + "', '"
+                                + chuyenDangNgay(ngayThi) + "', '"
+                               + lan + "', '"
+                               + soCauThi + "', '"
+                               + thoiGian + "', '"
+                               + "1'"
+                               ;
+                            int result = Program.ExecSqlNonQuery(strLenh1, Program.connstr);
+                            if (result == 0)
+                            {
+                                MessageBox.Show("Lưu thành công", "", MessageBoxButtons.OK);
+                            }
+                            this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                            this.LOPTableAdapter.Fill(this.dSGVDK.LOP);
+                            bdsLop.Position = viTriLop;
 
-                        this.dSGVDK.GIAOVIEN_DANGKY.Clear();
+                            this.dSGVDK.GIAOVIEN_DANGKY.Clear();
 
-                        this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
-                        this.GIAOVIEN_DANGKYTableAdapter.Fill(this.dSGVDK.GIAOVIEN_DANGKY);
-                        bdsGVDK.Position = viTri;
+                            this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+                            this.GIAOVIEN_DANGKYTableAdapter.Fill(this.dSGVDK.GIAOVIEN_DANGKY);
+                            bdsGVDK.Position = viTri;
+                    }
+                }   else 
+                    {
+                        MessageBox.Show("Đã tồn tại đăng kí thi lần "+ lan 
+                            +" của lớp "
+                            + ((DataRowView)bdsLop[bdsLop.Position])["TENLOP"].ToString().Trim()
+                            +" ứng với môn học "
+                            + ((DataRowView)cmbMH.SelectedItem)["TENMH"].ToString().Trim(),
+                            "", MessageBoxButtons.OK);
+                        return;
                     }
                     
-                }
-                
-            }
+               
             panelControl2.Enabled = false;
             gcGVDK.Enabled = true;
             gcLop.Enabled = true;
@@ -426,6 +484,8 @@ namespace THITRACNGHIEM
             {
                 cmbMH.SelectedValue = "MATRONG";
                 cmbGV.SelectedValue = "MATRONG";
+                cmbTrinhDo.SelectedItem = "A";
+                cmbLan.SelectedItem = "1";
                 btnXoa.Enabled = false;
                 btnHieuChinh.Enabled = false;
                 return;
@@ -491,6 +551,8 @@ namespace THITRACNGHIEM
             {
                 cmbMH.SelectedValue = "MATRONG";
                 cmbGV.SelectedValue = "MATRONG";
+                cmbTrinhDo.SelectedItem = "A";
+                cmbLan.SelectedItem = "1";
                 btnXoa.Enabled = false;
                 btnHieuChinh.Enabled = false;
                 return;
