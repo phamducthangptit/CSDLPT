@@ -28,7 +28,7 @@ namespace THITRACNGHIEM
             
             dSChuanBiThi.EnforceConstraints = false;
             this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.GIAOVIEN_DANGKYTableAdapter.FillDanhSachThi(this.dSChuanBiThi.GIAOVIEN_DANGKY, maSV);
+            this.GIAOVIEN_DANGKYTableAdapter.FillDanhSachThi(this.dSChuanBiThi.GIAOVIEN_DANGKY, maSV.Trim());
             
             this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.LOPTableAdapter.Fill(this.dSChuanBiThi.LOP);
@@ -36,6 +36,7 @@ namespace THITRACNGHIEM
             this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.MONHOCTableAdapter.Fill(this.dSChuanBiThi.MONHOC);
 
+            Program.conn.Close();
             if(bdsGVDK.Count == 0)
             {
                 groupBox1.Visible = false;
@@ -55,6 +56,11 @@ namespace THITRACNGHIEM
 
         private void btnVaoThi_Click(object sender, EventArgs e)
         {
+            if (!this.txtNgayThi.ToString().Equals(DateTime.Today.ToString()))
+            {
+                MessageBox.Show("Đã quá ngày thi", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
             string strLenhCheck = "EXEC SP_CHECKTHI '" + maSV + "'" + ",'" + txtMaMH.Text + "'," + Int32.Parse(txtLan.Text);
             SqlDataReader dataReaderCheckThi = Program.ExecSqlDataReader(strLenhCheck);
             dataReaderCheckThi.Read();
@@ -100,9 +106,6 @@ namespace THITRACNGHIEM
                     MessageBox.Show("Bạn đã thi! Vui lòng Click Reload để hiện thông tin mới nhất", "Thông báo", MessageBoxButtons.OK);
                 }
             }
-            
-
-            
         }
 
         private void btnXemLaiKQ_Click(object sender, EventArgs e)
@@ -120,35 +123,6 @@ namespace THITRACNGHIEM
             print.ShowPreviewDialog();
         }
 
-        private void gcGVDK_Click(object sender, EventArgs e)
-        {
-            if (bdsGVDK.Count == 0)
-            {
-                groupBox1.Visible = false;
-            }
-            else
-            {
-                bdsMonHoc.Position = bdsMonHoc.Find("MAMH", this.txtMaMH.Text);
-                this.txtTenMH.Text = ((DataRowView)bdsMonHoc[bdsMonHoc.Position])["TENMH"].ToString();
-                groupBox1.Visible = true;
-                string strLenh = "EXEC SP_CHECKTHI '" + maSV + "'" + ",'" + txtMaMH.Text + "'," + Int32.Parse(txtLan.Text);
-                SqlDataReader dataReaderCheckThi = Program.ExecSqlDataReader(strLenh);
-                dataReaderCheckThi.Read();
-                int check = dataReaderCheckThi.GetInt32(0);
-
-                if (check == 0)
-                {
-                    btnVaoThi.Visible = true;
-                    btnXemLaiKQ.Visible = false;
-                }
-                else
-                {
-                    btnVaoThi.Visible = false;
-                    btnXemLaiKQ.Visible = true;
-                }
-                dataReaderCheckThi.Close();
-            }
-        }
         private Form CheckExist(Type ftype)
         {
             foreach (Form f in Application.OpenForms)
@@ -166,9 +140,10 @@ namespace THITRACNGHIEM
             try
             {
                 this.GIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.GIAOVIEN_DANGKYTableAdapter.FillDanhSachThi(this.dSChuanBiThi.GIAOVIEN_DANGKY, maSV);
+                this.GIAOVIEN_DANGKYTableAdapter.FillDanhSachThi(this.dSChuanBiThi.GIAOVIEN_DANGKY, maSV.Trim());
                 bdsGVDK.Position = vitrimonthi;
 
+                
                 if (bdsGVDK.Count == 0)
                 {
                     groupBox1.Visible = false;
@@ -176,7 +151,6 @@ namespace THITRACNGHIEM
                 else
                 {
                     groupBox1.Visible = true;
-                    
                 }
             } catch( Exception ex ) 
             {
@@ -187,14 +161,20 @@ namespace THITRACNGHIEM
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            string strLenh = "EXEC SP_CHECKTHI '" + maSV + "'" + ",'" + txtMaMH.Text + "'," + Int32.Parse(txtLan.Text);
+            if (bdsGVDK.Count == 0) return;
+            string maMHQuery = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAMH"].ToString();
+            int lanQuery = Int32.Parse( ((DataRowView)bdsGVDK[bdsGVDK.Position])["LAN"].ToString());
+            string strLenh = "EXEC SP_CHECKTHI '" + maSV + "'" + ",'" + maMHQuery + "'," + lanQuery;
             SqlDataReader dataReaderCheckThi = Program.ExecSqlDataReader(strLenh);
             dataReaderCheckThi.Read();
             int check = dataReaderCheckThi.GetInt32(0);
-            int vitriMH = bdsMonHoc.Find("MaMH", this.txtMaMH.Text);
+            dataReaderCheckThi.Close();
+            Program.conn.Close();
+            int vitriMH = bdsMonHoc.Find("MaMH", maMHQuery);
             this.txtTenMH.Text = ((DataRowView)bdsMonHoc[vitriMH])["TENMH"].ToString();
             if (check == 0)
             {
+
                 btnVaoThi.Visible = true;
                 btnXemLaiKQ.Visible = false;
             }
@@ -203,7 +183,7 @@ namespace THITRACNGHIEM
                 btnVaoThi.Visible = false;
                 btnXemLaiKQ.Visible = true;
             }
-            dataReaderCheckThi.Close();
+            
         }
     }
 }
