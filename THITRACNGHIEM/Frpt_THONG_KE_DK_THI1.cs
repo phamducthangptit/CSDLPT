@@ -75,7 +75,9 @@ namespace THITRACNGHIEM
                 deDenNgay.Focus();
                 return;
             }
+
             if (frmGVDK.soSanhNgay(tuNgay, denNgay) == -1)
+
             {
                 MessageBox.Show("Ngày kết thúc không thể nhỏ hơn ngày bắt đầu", "", MessageBoxButtons.OK);
                 deDenNgay.Focus();
