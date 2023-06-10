@@ -55,11 +55,7 @@ namespace THITRACNGHIEM
                 chuyenCoSo = 0;
             }
         }
-        private string chuyenDangNgay(string s)
-        {
-            string[] tmp = s.Split('/');
-            return tmp[2] + "/" + tmp[1] + "/" + tmp[0];
-        }
+        
         private void btnPreview_Click(object sender, EventArgs e)
         {
             string tuNgay = deTuNgay.Text.Trim();
@@ -79,7 +75,9 @@ namespace THITRACNGHIEM
                 deDenNgay.Focus();
                 return;
             }
-            if (tuNgay.CompareTo(denNgay) > 0)
+
+            if (frmGVDK.soSanhNgay(tuNgay, denNgay) == -1)
+
             {
                 MessageBox.Show("Ngày kết thúc không thể nhỏ hơn ngày bắt đầu", "", MessageBoxButtons.OK);
                 deDenNgay.Focus();
@@ -95,14 +93,14 @@ namespace THITRACNGHIEM
             Xrpt_THONG_KE_DK_THI1 rpt;
             if (chuyenCoSo == 0 && thaydoiNgay == 0)
             {
-                rpt = new Xrpt_THONG_KE_DK_THI1(0, chuyenDangNgay(tuNgay),chuyenDangNgay( denNgay));
+                rpt = new Xrpt_THONG_KE_DK_THI1(0, frmGVDK.chuyenDangNgay(tuNgay), frmGVDK.chuyenDangNgay( denNgay));
                 rpt.lblTieuDe.Text = "DANH SÁCH ĐĂNG KÝ THI TRẮC NGHIỆM " + cmbCoSo.Text.ToUpper();
                 rpt.lblNgay.Text = "TỪ NGÀY " + tuNgay + " ĐẾN NGÀY " + denNgay;
                 ReportPrintTool print = new ReportPrintTool(rpt);
                 print.ShowPreviewDialog();
             } else if (chuyenCoSo == 1 && thaydoiNgay == 0)
             {
-                rpt = new Xrpt_THONG_KE_DK_THI1(1, chuyenDangNgay(tuNgay), chuyenDangNgay(denNgay));
+                rpt = new Xrpt_THONG_KE_DK_THI1(1, frmGVDK.chuyenDangNgay(tuNgay), frmGVDK.chuyenDangNgay(denNgay));
                 rpt.lblTieuDe.Text = "DANH SÁCH ĐĂNG KÝ THI TRẮC NGHIỆM " + cmbCoSo.Text.ToUpper();
                 rpt.lblNgay.Text = "TỪ NGÀY " + tuNgay + " ĐẾN NGÀY " + denNgay;
                 ReportPrintTool print = new ReportPrintTool(rpt);
@@ -110,7 +108,7 @@ namespace THITRACNGHIEM
             }
             else if (chuyenCoSo == 0 && thaydoiNgay == 1)
             {
-                rpt = new Xrpt_THONG_KE_DK_THI1(2, chuyenDangNgay(tuNgay), chuyenDangNgay(denNgay));
+                rpt = new Xrpt_THONG_KE_DK_THI1(2, frmGVDK.chuyenDangNgay(tuNgay), frmGVDK.chuyenDangNgay(denNgay));
                 rpt.lblTieuDe.Text = "DANH SÁCH ĐĂNG KÝ THI TRẮC NGHIỆM " + cmbCoSo.Text.ToUpper();
                 rpt.lblNgay.Text = "TỪ NGÀY " + tuNgay + " ĐẾN NGÀY " + denNgay;
                 ReportPrintTool print = new ReportPrintTool(rpt);
@@ -118,7 +116,7 @@ namespace THITRACNGHIEM
             }
             else if (chuyenCoSo == 1 && thaydoiNgay == 1)
             {
-                rpt = new Xrpt_THONG_KE_DK_THI1(3, chuyenDangNgay(tuNgay), chuyenDangNgay(denNgay));
+                rpt = new Xrpt_THONG_KE_DK_THI1(3, frmGVDK.chuyenDangNgay(tuNgay), frmGVDK.chuyenDangNgay(denNgay));
                 rpt.lblTieuDe.Text = "DANH SÁCH ĐĂNG KÝ THI TRẮC NGHIỆM " + cmbCoSo.Text.ToUpper();
                 rpt.lblNgay.Text = "TỪ NGÀY " + tuNgay + " ĐẾN NGÀY " + denNgay;
                 ReportPrintTool print = new ReportPrintTool(rpt);

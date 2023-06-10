@@ -92,11 +92,7 @@
             this.btnDSDkiThi,
             this.btnTest});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-
-            this.ribbon.Margin = new System.Windows.Forms.Padding(5);
-
             this.ribbon.Margin = new System.Windows.Forms.Padding(6);
-
             this.ribbon.MaxItemId = 20;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 552;
@@ -254,11 +250,6 @@
             this.btnDSDkiThi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDSDkiThi.ImageOptions.SvgImage")));
             this.btnDSDkiThi.Name = "btnDSDkiThi";
             this.btnDSDkiThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSDkiThi_ItemClick);
-            // 
-            // btnTest
-            // 
-            this.btnTest.Id = 19;
-            this.btnTest.Name = "btnTest";
             // 
             // btnTest
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.CodeParser;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -57,7 +58,8 @@ namespace THITRACNGHIEM
             if (Program.mGroup == "TRUONG")
             {
                 cmbCoSo.Enabled = true;
-                btnThem.Enabled = btnHieuChinh.Enabled = btnGhi.Enabled = btnXoa.Enabled = btnPhucHoi.Enabled = false;
+                btnThem.Enabled = btnHieuChinh.Enabled = btnGhi.Enabled 
+                    = btnXoa.Enabled = btnPhucHoi.Enabled = false;
                 btnReload.Enabled = btnThoat.Enabled = true;
                 panelControl2.Enabled = false;
             }
@@ -98,7 +100,6 @@ namespace THITRACNGHIEM
             if (bdsGVDK.Position != -1)
                 cmbGV.SelectedValue = ((DataRowView)bdsGVDK[0])["MAGV"].ToString();
             else cmbGV.SelectedValue = "MATRONG";
-            //cmbGV.SelectedValue = ((DataRowView)bdsGVDK[0])["MAGV"].ToString();
             cmbTrinhDo.Items.Add("A");
             cmbTrinhDo.Items.Add("B");
             cmbTrinhDo.Items.Add("C");
@@ -203,7 +204,6 @@ namespace THITRACNGHIEM
         {
             bdsGVDK.CancelEdit();
             bdsGVDK.Position = viTri;
-
             gcGVDK.Enabled = true;
             gcLop.Enabled = true;
             panelControl2.Enabled = false;
@@ -223,7 +223,8 @@ namespace THITRACNGHIEM
             txtMaLop.Text = ((DataRowView)bdsLop[bdsLop.Position])["MALOP"].ToString();
             cmbMH.SelectedValue = "MATRONG";
             cmbGV.SelectedValue = "MATRONG";
-
+            cmbTrinhDo.SelectedItem = "A";
+            cmbLan.SelectedItem = "1";
 
             panelControl2.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled = true;
 
@@ -253,10 +254,28 @@ namespace THITRACNGHIEM
         }
 
 
-        private string chuyenDangNgay(string s)
+        public static string chuyenDangNgay(string s)
         {
             string[] tmp = s.Split('/');
             return tmp[2] + "/" + tmp[1] + "/" + tmp[0];
+        }
+
+        public static int soSanhNgay(string s1, string s2)
+        {
+            string[] tmp1 = s1.Split('/');
+            string[] tmp2 = s2.Split('/');
+            int check1 = (int.Parse(tmp1[2])*100 + int.Parse(tmp1[1])) * 100 + int.Parse(tmp1[0]);
+            int check2 = (int.Parse(tmp2[2])*100 + int.Parse(tmp2[1])) * 100 + int.Parse(tmp2[0]);
+            if (check1 > check2)
+            {
+                return -1;
+            } else if (check1 == check2)
+            {
+                return 0;
+            } else
+            {
+                return 1;
+            }
         }
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -294,10 +313,10 @@ namespace THITRACNGHIEM
                 deNgayThi.Focus();
                 return;
             }
-            string currentDay = DateTime.Today.AddDays(7).ToString("dd/MM/yyyy");
-            if (ngayThi.CompareTo(currentDay) < 0)
+            string ngay = DateTime.Today.AddDays(7).ToString("dd/MM/yyyy");
+            if (soSanhNgay(ngay, ngayThi) == -1)
             {
-                MessageBox.Show("Ngày thi phải được đăng kí trước 1 tuần!" + currentDay, "", MessageBoxButtons.OK);
+                MessageBox.Show("Ngày thi phải được đăng kí trước 1 tuần so với ngày hiện tại!", "", MessageBoxButtons.OK);
                 deNgayThi.Focus();
                 return;
             }
@@ -322,7 +341,7 @@ namespace THITRACNGHIEM
                 SqlDataReader dataReaderGVDK1 = Program.ExecSqlDataReader(strLenh1);
                 dataReaderGVDK1.Read();
 
-                int check1 = Int32.Parse(dataReaderGVDK1.GetString(0)); // check xem trong db đã có mã gv này hay chưa
+                int check1 = Int32.Parse(dataReaderGVDK1.GetString(0)); // check xem trong db đã có đăng kí thi lần 1 chưa
                 dataReaderGVDK1.Close();
                 Program.conn.Close();
                 if( check1 == 0)
@@ -336,6 +355,23 @@ namespace THITRACNGHIEM
                     cmbLan.Focus();
                     return;
                 }
+                strLenh1 = "EXEC SP_CHECK_NGAY_THI_LAN_2 '" + maMH + "', '"
+                                + maLop + "', '"+ chuyenDangNgay(ngayThi) +"'";
+                dataReaderGVDK1 = Program.ExecSqlDataReader(strLenh1);
+                dataReaderGVDK1.Read();
+
+                int check2 = Int32.Parse(dataReaderGVDK1.GetString(0)); // check xem ngày đăng kí lần 2 có lớn hơn lần 1
+                dataReaderGVDK1.Close();
+                Program.conn.Close();
+                if(check2 == 1)
+                {
+                    MessageBox.Show("Lần thi thứ 2 không thể đăng kí thi trước lần thi 1"
+                        , "", MessageBoxButtons.OK);
+                    deNgayThi.Focus();
+                    return;
+                }
+                
+
             }
             if (soCauThi == "")
             {
@@ -413,7 +449,8 @@ namespace THITRACNGHIEM
                         + lan + "', '"
                         + soCauThi + "', '"
                         + thoiGian + "', '"
-                        + "0'"
+                        + "0" +
+                        "'"
                         ;
                     int result = Program.ExecSqlNonQuery(strLenh1, Program.connstr);
                     if (result == 0)
@@ -501,18 +538,40 @@ namespace THITRACNGHIEM
                 SqlDataReader dataReaderGVDK = Program.ExecSqlDataReader(strLenh);
                 dataReaderGVDK.Read();
                 int check = dataReaderGVDK.GetInt32(0); // check xem trong db đã có mã gv này hay chưa
+                dataReaderGVDK.Close();
+                Program.conn.Close();
                 if (check == 0)
                 {
                     btnHieuChinh.Enabled = true;
-                    btnXoa.Enabled = true;
+                    if (lan.Equals("1"))
+                    {
+                        strLenh = "EXEC SP_CHECKEXISTGVDK '" + maMH + "', '"
+                                + maLop + "', '2'" ;
+                        dataReaderGVDK = Program.ExecSqlDataReader(strLenh);
+                        dataReaderGVDK.Read();
+
+                        int check1 = Int32.Parse(dataReaderGVDK.GetString(0)); // check xem trong db đã có mã gv này hay chưa
+                        dataReaderGVDK.Close();
+                        Program.conn.Close();
+                        if (check1 == 0)
+                        {
+                            btnXoa.Enabled = true;
+                        } else
+                        {
+                            btnXoa.Enabled= false;
+                        }
+                    } else
+                    {
+                        btnXoa.Enabled = true;
+                    }
                 }
                 else
                 {
                     btnXoa.Enabled = false;
                     btnHieuChinh.Enabled = false;
                 }
-                dataReaderGVDK.Close();
-                Program.conn.Close();
+                
+
             }
             cmbMH.SelectedValue = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAMH"].ToString();
             cmbGV.SelectedValue = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAGV"].ToString();
@@ -568,18 +627,41 @@ namespace THITRACNGHIEM
                 SqlDataReader dataReaderGVDK = Program.ExecSqlDataReader(strLenh);
                 dataReaderGVDK.Read();
                 int check = dataReaderGVDK.GetInt32(0); // check xem trong db đã có mã gv này hay chưa
+                dataReaderGVDK.Close();
+                Program.conn.Close();
                 if (check == 0)
                 {
                     btnHieuChinh.Enabled = true;
-                    btnXoa.Enabled = true;
+                    if (lan.Equals("1"))
+                    {
+                        strLenh = "EXEC SP_CHECKEXISTGVDK '" + maMH + "', '"
+                                + maLop + "', '2'";
+                        dataReaderGVDK = Program.ExecSqlDataReader(strLenh);
+                        dataReaderGVDK.Read();
+
+                        int check1 = Int32.Parse(dataReaderGVDK.GetString(0)); // check xem trong db đã có mã gv này hay chưa
+                        dataReaderGVDK.Close();
+                        Program.conn.Close();
+                        if (check1 == 0)
+                        {
+                            btnXoa.Enabled = true;
+                        }
+                        else
+                        {
+                            btnXoa.Enabled = false;
+                        }
+                        
+                    } else
+                    {
+                        btnXoa.Enabled = true;
+                    }
                 }
                 else
                 {
                     btnXoa.Enabled = false;
                     btnHieuChinh.Enabled = false;
                 }
-                dataReaderGVDK.Close();
-                Program.conn.Close();
+
             }
             cmbMH.SelectedValue = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAMH"].ToString();
             cmbGV.SelectedValue = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAGV"].ToString();
