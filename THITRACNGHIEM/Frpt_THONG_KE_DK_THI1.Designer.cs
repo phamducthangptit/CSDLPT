@@ -49,7 +49,7 @@
             this.cmbCoSo.FormattingEnabled = true;
             this.cmbCoSo.Location = new System.Drawing.Point(304, 57);
             this.cmbCoSo.Name = "cmbCoSo";
-            this.cmbCoSo.Size = new System.Drawing.Size(271, 27);
+            this.cmbCoSo.Size = new System.Drawing.Size(271, 30);
             this.cmbCoSo.TabIndex = 3;
             this.cmbCoSo.SelectedIndexChanged += new System.EventHandler(this.cmbCoSo_SelectedIndexChanged);
             // 
@@ -61,7 +61,7 @@
             this.labelControl1.Location = new System.Drawing.Point(232, 60);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(40, 19);
+            this.labelControl1.Size = new System.Drawing.Size(54, 22);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Cơ sở:";
             // 
@@ -69,13 +69,13 @@
             // 
             this.deTuNgay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.deTuNgay.EditValue = null;
-            this.deTuNgay.Location = new System.Drawing.Point(304, 102);
+            this.deTuNgay.Location = new System.Drawing.Point(323, 106);
             this.deTuNgay.Name = "deTuNgay";
             this.deTuNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deTuNgay.Size = new System.Drawing.Size(124, 20);
+            this.deTuNgay.Size = new System.Drawing.Size(124, 22);
             this.deTuNgay.TabIndex = 4;
             // 
             // label1
@@ -84,7 +84,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(228, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 19);
+            this.label1.Size = new System.Drawing.Size(80, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Từ ngày:";
             // 
@@ -94,7 +94,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(228, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 19);
+            this.label2.Size = new System.Drawing.Size(89, 22);
             this.label2.TabIndex = 7;
             this.label2.Text = "Đến ngày:";
             // 
@@ -102,13 +102,13 @@
             // 
             this.deDenNgay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.deDenNgay.EditValue = null;
-            this.deDenNgay.Location = new System.Drawing.Point(304, 145);
+            this.deDenNgay.Location = new System.Drawing.Point(323, 145);
             this.deDenNgay.Name = "deDenNgay";
             this.deDenNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deDenNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.deDenNgay.Size = new System.Drawing.Size(124, 20);
+            this.deDenNgay.Size = new System.Drawing.Size(124, 22);
             this.deDenNgay.TabIndex = 6;
             // 
             // btnPreview
@@ -135,7 +135,7 @@
             // 
             // Frpt_THONG_KE_DK_THI1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 283);
             this.Controls.Add(this.btnThoat);

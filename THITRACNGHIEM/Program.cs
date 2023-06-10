@@ -17,7 +17,7 @@ namespace THITRACNGHIEM
         /// </summary>
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
-        public static String connstr_publisher = "Data Source=ADMIN-PC;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+        public static String connstr_publisher = "Data Source=MSI;Initial Catalog=TN_CSDLPT;Integrated Security=True";
 
         public static SqlDataReader myReader;
         public static String servername = "";

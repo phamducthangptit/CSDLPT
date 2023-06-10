@@ -262,7 +262,6 @@
             this.gcGVDK.TabIndex = 1;
             this.gcGVDK.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gcGVDK.Click += new System.EventHandler(this.gcGVDK_Click);
             // 
             // gridView1
             // 
