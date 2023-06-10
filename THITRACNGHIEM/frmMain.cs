@@ -222,7 +222,7 @@ namespace THITRACNGHIEM
             else
             {
                 frmGVDK f = new frmGVDK();
-                //f.MdiParent = this;
+                f.MdiParent = this;
                 f.Show();
             }
         }

@@ -61,14 +61,12 @@
             this.txtTG = new System.Windows.Forms.TextBox();
             this.txtLan = new System.Windows.Forms.TextBox();
             this.txtNgayThi = new System.Windows.Forms.TextBox();
-            this.txtTenLop = new System.Windows.Forms.TextBox();
             this.bdsLop = new System.Windows.Forms.BindingSource(this.components);
             this.txtTenMH = new System.Windows.Forms.TextBox();
             this.bdsMonHoc = new System.Windows.Forms.BindingSource(this.components);
             this.tRINHDOTextBox = new System.Windows.Forms.TextBox();
             this.txtMaLop = new System.Windows.Forms.TextBox();
             this.txtMaMH = new System.Windows.Forms.TextBox();
-            this.btnXemLaiKQ = new System.Windows.Forms.Button();
             this.btnVaoThi = new System.Windows.Forms.Button();
             this.MONHOCTableAdapter = new THITRACNGHIEM.DSChuanBiThiTableAdapters.MONHOCTableAdapter();
             this.LOPTableAdapter = new THITRACNGHIEM.DSChuanBiThiTableAdapters.LOPTableAdapter();
@@ -81,6 +79,8 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.txtTenLop = new System.Windows.Forms.TextBox();
+            this.btnXemLaiKQ = new System.Windows.Forms.Button();
             mAMHLabel = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
             tRINHDOLabel = new System.Windows.Forms.Label();
@@ -105,7 +105,7 @@
             // 
             mAMHLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             mAMHLabel.AutoSize = true;
-            mAMHLabel.Location = new System.Drawing.Point(25, 46);
+            mAMHLabel.Location = new System.Drawing.Point(25, 63);
             mAMHLabel.Name = "mAMHLabel";
             mAMHLabel.Size = new System.Drawing.Size(78, 22);
             mAMHLabel.TabIndex = 2;
@@ -115,7 +115,7 @@
             // 
             mALOPLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(18, 150);
+            mALOPLabel.Location = new System.Drawing.Point(18, 167);
             mALOPLabel.Name = "mALOPLabel";
             mALOPLabel.Size = new System.Drawing.Size(74, 22);
             mALOPLabel.TabIndex = 4;
@@ -125,7 +125,7 @@
             // 
             tRINHDOLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             tRINHDOLabel.AutoSize = true;
-            tRINHDOLabel.Location = new System.Drawing.Point(740, 113);
+            tRINHDOLabel.Location = new System.Drawing.Point(740, 130);
             tRINHDOLabel.Name = "tRINHDOLabel";
             tRINHDOLabel.Size = new System.Drawing.Size(83, 22);
             tRINHDOLabel.TabIndex = 6;
@@ -135,7 +135,7 @@
             // 
             tENMHLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(18, 96);
+            tENMHLabel.Location = new System.Drawing.Point(18, 113);
             tENMHLabel.Name = "tENMHLabel";
             tENMHLabel.Size = new System.Drawing.Size(82, 22);
             tENMHLabel.TabIndex = 16;
@@ -145,7 +145,7 @@
             // 
             tENLOPLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(18, 204);
+            tENLOPLabel.Location = new System.Drawing.Point(18, 221);
             tENLOPLabel.Name = "tENLOPLabel";
             tENLOPLabel.Size = new System.Drawing.Size(78, 22);
             tENLOPLabel.TabIndex = 18;
@@ -155,7 +155,7 @@
             // 
             nGAYTHILabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             nGAYTHILabel.AutoSize = true;
-            nGAYTHILabel.Location = new System.Drawing.Point(412, 51);
+            nGAYTHILabel.Location = new System.Drawing.Point(412, 68);
             nGAYTHILabel.Name = "nGAYTHILabel";
             nGAYTHILabel.Size = new System.Drawing.Size(82, 22);
             nGAYTHILabel.TabIndex = 19;
@@ -165,7 +165,7 @@
             // 
             lANLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             lANLabel.AutoSize = true;
-            lANLabel.Location = new System.Drawing.Point(451, 113);
+            lANLabel.Location = new System.Drawing.Point(451, 130);
             lANLabel.Name = "lANLabel";
             lANLabel.Size = new System.Drawing.Size(45, 22);
             lANLabel.TabIndex = 20;
@@ -175,7 +175,7 @@
             // 
             tHOIGIANLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             tHOIGIANLabel.AutoSize = true;
-            tHOIGIANLabel.Location = new System.Drawing.Point(402, 183);
+            tHOIGIANLabel.Location = new System.Drawing.Point(402, 200);
             tHOIGIANLabel.Name = "tHOIGIANLabel";
             tHOIGIANLabel.Size = new System.Drawing.Size(92, 22);
             tHOIGIANLabel.TabIndex = 21;
@@ -185,7 +185,7 @@
             // 
             sOCAUTHILabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             sOCAUTHILabel.AutoSize = true;
-            sOCAUTHILabel.Location = new System.Drawing.Point(730, 51);
+            sOCAUTHILabel.Location = new System.Drawing.Point(730, 68);
             sOCAUTHILabel.Name = "sOCAUTHILabel";
             sOCAUTHILabel.Size = new System.Drawing.Size(94, 22);
             sOCAUTHILabel.TabIndex = 22;
@@ -342,6 +342,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTenLop);
             this.groupBox1.Controls.Add(sOCAUTHILabel);
             this.groupBox1.Controls.Add(this.txtSoCauThi);
             this.groupBox1.Controls.Add(tHOIGIANLabel);
@@ -351,7 +352,6 @@
             this.groupBox1.Controls.Add(nGAYTHILabel);
             this.groupBox1.Controls.Add(this.txtNgayThi);
             this.groupBox1.Controls.Add(tENLOPLabel);
-            this.groupBox1.Controls.Add(this.txtTenLop);
             this.groupBox1.Controls.Add(tENMHLabel);
             this.groupBox1.Controls.Add(this.txtTenMH);
             this.groupBox1.Controls.Add(tRINHDOLabel);
@@ -365,7 +365,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 348);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1171, 223);
+            this.groupBox1.Size = new System.Drawing.Size(1171, 258);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết";
@@ -374,7 +374,7 @@
             // 
             this.txtSoCauThi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSoCauThi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGVDK, "SOCAUTHI", true));
-            this.txtSoCauThi.Location = new System.Drawing.Point(830, 48);
+            this.txtSoCauThi.Location = new System.Drawing.Point(830, 65);
             this.txtSoCauThi.Name = "txtSoCauThi";
             this.txtSoCauThi.ReadOnly = true;
             this.txtSoCauThi.Size = new System.Drawing.Size(100, 30);
@@ -384,7 +384,7 @@
             // 
             this.txtTG.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTG.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGVDK, "THOIGIAN", true));
-            this.txtTG.Location = new System.Drawing.Point(512, 175);
+            this.txtTG.Location = new System.Drawing.Point(512, 192);
             this.txtTG.Name = "txtTG";
             this.txtTG.ReadOnly = true;
             this.txtTG.Size = new System.Drawing.Size(173, 30);
@@ -394,7 +394,7 @@
             // 
             this.txtLan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtLan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGVDK, "LAN", true));
-            this.txtLan.Location = new System.Drawing.Point(512, 110);
+            this.txtLan.Location = new System.Drawing.Point(512, 127);
             this.txtLan.Name = "txtLan";
             this.txtLan.ReadOnly = true;
             this.txtLan.Size = new System.Drawing.Size(173, 30);
@@ -404,21 +404,11 @@
             // 
             this.txtNgayThi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNgayThi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGVDK, "NGAYTHI", true));
-            this.txtNgayThi.Location = new System.Drawing.Point(512, 48);
+            this.txtNgayThi.Location = new System.Drawing.Point(512, 65);
             this.txtNgayThi.Name = "txtNgayThi";
             this.txtNgayThi.ReadOnly = true;
             this.txtNgayThi.Size = new System.Drawing.Size(173, 30);
             this.txtNgayThi.TabIndex = 20;
-            // 
-            // txtTenLop
-            // 
-            this.txtTenLop.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLop, "TENLOP", true));
-            this.txtTenLop.Location = new System.Drawing.Point(109, 201);
-            this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.ReadOnly = true;
-            this.txtTenLop.Size = new System.Drawing.Size(261, 30);
-            this.txtTenLop.TabIndex = 19;
             // 
             // bdsLop
             // 
@@ -429,7 +419,7 @@
             // 
             this.txtTenMH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTenMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMonHoc, "TENMH", true));
-            this.txtTenMH.Location = new System.Drawing.Point(109, 93);
+            this.txtTenMH.Location = new System.Drawing.Point(109, 110);
             this.txtTenMH.Name = "txtTenMH";
             this.txtTenMH.ReadOnly = true;
             this.txtTenMH.Size = new System.Drawing.Size(261, 30);
@@ -444,7 +434,7 @@
             // 
             this.tRINHDOTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tRINHDOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGVDK, "TRINHDO", true));
-            this.tRINHDOTextBox.Location = new System.Drawing.Point(829, 110);
+            this.tRINHDOTextBox.Location = new System.Drawing.Point(829, 127);
             this.tRINHDOTextBox.Name = "tRINHDOTextBox";
             this.tRINHDOTextBox.ReadOnly = true;
             this.tRINHDOTextBox.Size = new System.Drawing.Size(100, 30);
@@ -454,7 +444,7 @@
             // 
             this.txtMaLop.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGVDK, "MALOP", true));
-            this.txtMaLop.Location = new System.Drawing.Point(109, 147);
+            this.txtMaLop.Location = new System.Drawing.Point(109, 164);
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.ReadOnly = true;
             this.txtMaLop.Size = new System.Drawing.Size(130, 30);
@@ -464,27 +454,16 @@
             // 
             this.txtMaMH.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsGVDK, "MAMH", true));
-            this.txtMaMH.Location = new System.Drawing.Point(109, 43);
+            this.txtMaMH.Location = new System.Drawing.Point(109, 60);
             this.txtMaMH.Name = "txtMaMH";
             this.txtMaMH.ReadOnly = true;
             this.txtMaMH.Size = new System.Drawing.Size(130, 30);
             this.txtMaMH.TabIndex = 3;
             // 
-            // btnXemLaiKQ
-            // 
-            this.btnXemLaiKQ.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnXemLaiKQ.Location = new System.Drawing.Point(997, 175);
-            this.btnXemLaiKQ.Name = "btnXemLaiKQ";
-            this.btnXemLaiKQ.Size = new System.Drawing.Size(150, 37);
-            this.btnXemLaiKQ.TabIndex = 1;
-            this.btnXemLaiKQ.Text = "Xem lại bài thi";
-            this.btnXemLaiKQ.UseVisualStyleBackColor = true;
-            this.btnXemLaiKQ.Click += new System.EventHandler(this.btnXemLaiKQ_Click);
-            // 
             // btnVaoThi
             // 
             this.btnVaoThi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnVaoThi.Location = new System.Drawing.Point(993, 86);
+            this.btnVaoThi.Location = new System.Drawing.Point(997, 127);
             this.btnVaoThi.Name = "btnVaoThi";
             this.btnVaoThi.Size = new System.Drawing.Size(154, 37);
             this.btnVaoThi.TabIndex = 0;
@@ -569,7 +548,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 571);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 606);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1171, 20);
             // 
@@ -579,7 +558,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 520);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 555);
             // 
             // barDockControlRight
             // 
@@ -587,13 +566,33 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1171, 51);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 520);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 555);
+            // 
+            // txtTenLop
+            // 
+            this.txtTenLop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTenLop.Location = new System.Drawing.Point(109, 221);
+            this.txtTenLop.Name = "txtTenLop";
+            this.txtTenLop.ReadOnly = true;
+            this.txtTenLop.Size = new System.Drawing.Size(261, 30);
+            this.txtTenLop.TabIndex = 24;
+            // 
+            // btnXemLaiKQ
+            // 
+            this.btnXemLaiKQ.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnXemLaiKQ.Location = new System.Drawing.Point(997, 192);
+            this.btnXemLaiKQ.Name = "btnXemLaiKQ";
+            this.btnXemLaiKQ.Size = new System.Drawing.Size(150, 37);
+            this.btnXemLaiKQ.TabIndex = 1;
+            this.btnXemLaiKQ.Text = "Xem lại bài thi";
+            this.btnXemLaiKQ.UseVisualStyleBackColor = true;
+            this.btnXemLaiKQ.Click += new System.EventHandler(this.btnXemLaiKQ_Click);
             // 
             // frmChuanBiThiSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 591);
+            this.ClientSize = new System.Drawing.Size(1171, 626);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcGVDK);
             this.Controls.Add(this.panel1);
@@ -646,7 +645,6 @@
         private System.Windows.Forms.TextBox tRINHDOTextBox;
         private System.Windows.Forms.TextBox txtMaLop;
         private System.Windows.Forms.TextBox txtMaMH;
-        private System.Windows.Forms.Button btnXemLaiKQ;
         private System.Windows.Forms.Button btnVaoThi;
         private System.Windows.Forms.BindingSource bdsMonHoc;
         private DSChuanBiThiTableAdapters.MONHOCTableAdapter MONHOCTableAdapter;
@@ -657,7 +655,6 @@
         private System.Windows.Forms.TextBox txtTG;
         private System.Windows.Forms.TextBox txtLan;
         private System.Windows.Forms.TextBox txtNgayThi;
-        private System.Windows.Forms.TextBox txtTenLop;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
@@ -667,5 +664,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private System.Windows.Forms.TextBox txtTenLop;
+        private System.Windows.Forms.Button btnXemLaiKQ;
     }
 }

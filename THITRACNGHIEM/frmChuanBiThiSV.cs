@@ -1,5 +1,6 @@
 ﻿using DevExpress.Utils.Extensions;
 using DevExpress.XtraReports.UI;
+using DevExpress.XtraRichEdit.Commands;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,12 +19,13 @@ namespace THITRACNGHIEM
     {
         string maSV = Program.username;
         int vitrimonthi = 0;
+        int vitrilop = 0;
         public frmChuanBiThiSV()
         {
             InitializeComponent();
         }
 
-        private void frmChuanBiThi_Load(object sender, EventArgs e)
+        public void frmChuanBiThi_Load(object sender, EventArgs e)
         {
             
             dSChuanBiThi.EnforceConstraints = false;
@@ -36,6 +38,8 @@ namespace THITRACNGHIEM
             this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.MONHOCTableAdapter.Fill(this.dSChuanBiThi.MONHOC);
 
+            vitrilop = bdsLop.Find("MALOP", this.txtMaLop.Text);
+            this.txtTenLop.Text = ((DataRowView)bdsLop[vitrilop])["TENLOP"].ToString();
             Program.conn.Close();
             if(bdsGVDK.Count == 0)
             {
@@ -56,11 +60,6 @@ namespace THITRACNGHIEM
 
         private void btnVaoThi_Click(object sender, EventArgs e)
         {
-            if (!this.txtNgayThi.ToString().Equals(DateTime.Today.ToString()))
-            {
-                MessageBox.Show("Đã quá ngày thi", "Thông báo", MessageBoxButtons.OK);
-                return;
-            }
             string strLenhCheck = "EXEC SP_CHECKTHI '" + maSV + "'" + ",'" + txtMaMH.Text + "'," + Int32.Parse(txtLan.Text);
             SqlDataReader dataReaderCheckThi = Program.ExecSqlDataReader(strLenhCheck);
             dataReaderCheckThi.Read();
@@ -68,11 +67,28 @@ namespace THITRACNGHIEM
             dataReaderCheckThi.Close();
             // check xem form thi da duoc mo chua
             Form frm = this.CheckExist(typeof(frmThiSinhVien));
-            if (frm != null) frm.Activate();
-            else
+            if (frm != null)
+            {
+                frm.Activate();
+            } else
+            {
+                frmThiSinhVien f = new frmThiSinhVien(txtMaMH.Text, txtTenMH.Text, maSV,
+                                                            Program.mHoTen, txtMaLop.Text, txtTenLop.Text, Int32.Parse(txtLan.Text), Int32.Parse(txtSoCauThi.Text), Int32.Parse(txtTG.Text));
+                f.Show();
+
+                //this.Close();
+
+                
+            }
+            
+
+            /*else
             {
                 if (checkthi == 0)
                 {
+                    frmThiSinhVien f = new frmThiSinhVien(txtMaMH.Text, txtTenMH.Text, maSV,
+                                                            Program.mHoTen, txtMaLop.Text, txtTenLop.Text, Int32.Parse(txtLan.Text), Int32.Parse(txtSoCauThi.Text), Int32.Parse(txtTG.Text));
+                    f.Show();
                     if (txtLan.Text.Equals("2")) // nếu thi lần 2 thì cần check xem đã thi lần 1 chưa
                     {
                         string strLenh = "EXEC SP_CHECKTHILAN2 '" + maSV + "'" + ",'" + txtMaMH.Text + "'";
@@ -105,7 +121,7 @@ namespace THITRACNGHIEM
                 {
                     MessageBox.Show("Bạn đã thi! Vui lòng Click Reload để hiện thông tin mới nhất", "Thông báo", MessageBoxButtons.OK);
                 }
-            }
+            }*/
         }
 
         private void btnXemLaiKQ_Click(object sender, EventArgs e)
@@ -134,7 +150,7 @@ namespace THITRACNGHIEM
             }
             return null;
         }
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        public void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitrimonthi = bdsGVDK.Position;
             try
@@ -163,6 +179,7 @@ namespace THITRACNGHIEM
         {
             if (bdsGVDK.Count == 0) return;
             string maMHQuery = ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAMH"].ToString();
+
             int lanQuery = Int32.Parse( ((DataRowView)bdsGVDK[bdsGVDK.Position])["LAN"].ToString());
             string strLenh = "EXEC SP_CHECKTHI '" + maSV + "'" + ",'" + maMHQuery + "'," + lanQuery;
             SqlDataReader dataReaderCheckThi = Program.ExecSqlDataReader(strLenh);
@@ -170,8 +187,10 @@ namespace THITRACNGHIEM
             int check = dataReaderCheckThi.GetInt32(0);
             dataReaderCheckThi.Close();
             Program.conn.Close();
+
             int vitriMH = bdsMonHoc.Find("MaMH", maMHQuery);
             this.txtTenMH.Text = ((DataRowView)bdsMonHoc[vitriMH])["TENMH"].ToString();
+
             if (check == 0)
             {
 
@@ -182,8 +201,26 @@ namespace THITRACNGHIEM
             {
                 btnVaoThi.Visible = false;
                 btnXemLaiKQ.Visible = true;
+                return;
             }
-            
+            string ngayThi = ((DataRowView)bdsGVDK[bdsGVDK.Position])["NGAYTHI"].ToString().Substring(0, 10);
+            if (frmGVDK.soSanhNgay(ngayThi, DateTime.Today.ToString("dd/MM/yyyy")) == -1)
+            {
+                this.btnVaoThi.Text = "Chưa tới ngày thi";
+                this.btnVaoThi.Enabled = false;
+                return;
+            }
+            else if (frmGVDK.soSanhNgay(ngayThi, DateTime.Today.ToString("dd/MM/yyyy")) == 1)
+            {
+                this.btnVaoThi.Text = "Đã quá ngày thi";
+                this.btnVaoThi.Enabled = false;
+                return;
+            } else
+            {
+                this.btnVaoThi.Text = "Vào thi";
+                this.btnVaoThi.Enabled = true;
+                return;
+            }
         }
     }
 }

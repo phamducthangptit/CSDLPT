@@ -336,7 +336,6 @@
             this.gIAOVIEN_DANGKYGridControl.TabIndex = 12;
             this.gIAOVIEN_DANGKYGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gIAOVIEN_DANGKYGridControl.Click += new System.EventHandler(this.gIAOVIEN_DANGKYGridControl_Click);
             // 
             // gridView1
             // 

@@ -246,8 +246,21 @@ namespace TaoFormThiTNTest
                 {
                     timer1.Stop();
                     thongBaoKQ();
+                    
+                    
                 }
             }
+        }
+        private Form CheckExist(Type ftype)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (ftype == f.GetType())
+                {
+                    return f;
+                }
+            }
+            return null;
         }
 
         public void thongBaoKQ()
@@ -273,9 +286,21 @@ namespace TaoFormThiTNTest
             string x = "Số câu đúng: " + soCauDung + "\n"
                     + "Số câu sai: " + soCauSai + "\n"
                     + "Điểm: " + diem;
-            string strDiem = "EXEC SP_INSERTDIEM " + listCauHoi[0].IdBaiThi + ", " + diem;
+
+            string strDiem = "EXEC SP_INSERTDIEM " + listCauHoi[0].IdBaiThi + ", '" + diem +"'";
             Program.ExecSqlNonQuery(strDiem, Program.connstr);
+
             this.Close();
+            Form f = CheckExist(typeof(frmChuanBiThiSV));
+
+            if (f != null)
+            {
+                f.Close();
+                frmChuanBiThiSV fn = new frmChuanBiThiSV();
+                fn.MdiParent = frmMain.ActiveForm;
+
+                fn.Show();
+            }
             MessageBox.Show(x, "Kết quả", MessageBoxButtons.OK);
         }
     }

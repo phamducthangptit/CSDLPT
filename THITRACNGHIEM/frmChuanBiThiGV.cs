@@ -57,16 +57,6 @@ namespace THITRACNGHIEM
             this.tableAdapterManager.UpdateAll(this.dSChuanBiThi);
 
         }
-
-        private void gIAOVIEN_DANGKYGridControl_Click(object sender, EventArgs e)
-        {
-            bdsLop.Position = bdsLop.Find("MALOP", this.txtMaLop.Text);
-            this.txtTenLop.Text = ((DataRowView)bdsLop[bdsLop.Position])["TENLOP"].ToString();
-
-            bdsMonHoc.Position = bdsMonHoc.Find("MAMH", this.txtMaMH.Text);
-            this.txtTenMH.Text = ((DataRowView)bdsMonHoc[bdsMonHoc.Position])["TENMH"].ToString();
-        }
-
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitrimonthi = bdsGVDK.Position;
@@ -124,8 +114,12 @@ namespace THITRACNGHIEM
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            int vitriMH = bdsMonHoc.Find("MaMH", this.txtMaMH.Text);
+            if (bdsGVDK.Count == 0) return;
+            int vitriMH = bdsMonHoc.Find("MAMH", ((DataRowView)bdsGVDK[bdsGVDK.Position])["MAMH"].ToString());
             this.txtTenMH.Text = ((DataRowView)bdsMonHoc[vitriMH])["TENMH"].ToString();
+
+            int vitrilop = bdsLop.Find("MALOP", ((DataRowView)bdsGVDK[bdsGVDK.Position])["MALOP"].ToString());
+            this.txtTenLop.Text = ((DataRowView)bdsLop[vitrilop])["TENLOP"].ToString();
         }
     }
 }
